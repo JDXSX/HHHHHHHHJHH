@@ -1,8 +1,5 @@
 def m1():
-    s = "[FBAN/FB4A;FBAV/{};FBBV/{}]".format(
-        str(random.randint(49, 66)) + '.0.0.' + str(random.randrange(20, 49)) + str(random.randint(11, 99)),
-        str(random.randint(11111111, 77777777))
-    )
-    e = "+[FBAN/Orca-Android;FBAV/334.74.10.38;FBPN/com.facebook.orca;FBLC/en_US;FBBV/517659453;FBCR/T-Mobile;FBMF/samsung;FBBD/samsung;FBDV/Xiaomi Mi 11;FBSV/11;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=4.0,width=1080,height=2280};FB_FW/1;FBRV/576000530]"
-    ua = s + e
+    s= "[FBAN/FB4A;FBAV/"+str(random.randint(111,555))+'.0.0.'+str(random.randrange(9,49))+str(random.randint(11,77))+";FBBV/"+str(random.randint(1111111,7777777))
+    e = "[FBAN/FB4A;FBAV/291.31.88.22;FBPN/com.facebook.orca;FBLC/en_US;FBBV/233366933;FBCR/AT&T;FBMF/samsung;FBBD/samsung;FBDV/iPhone 13 Pro Max;FBSV/12;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.0,width=2560,height=1920};FB_FW/1;FBRV/196658425]"
+    ua = s + e	
     return ua
