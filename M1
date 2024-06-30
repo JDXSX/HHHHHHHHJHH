@@ -3,6 +3,6 @@ def m1():
         str(random.randint(49, 66)) + '.0.0.' + str(random.randrange(20, 49)) + str(random.randint(11, 99)),
         str(random.randint(11111111, 77777777))
     )
-    e = "+[FBAN/Orca-Android;FBAV/210.83.29.38;FBPN/com.facebook.orca;FBLC/en_US;FBBV/469258024;FBCR/AT&T;FBMF/samsung;FBBD/samsung;FBDV/Pixel 6 Pro;FBSV/13;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.5,width=1440,height=1920};FB_FW/1;FBRV/101548100]"
+    e = ";[FBAN/Orca-Android;FBAV/210.83.29.38;FBPN/com.facebook.orca;FBLC/en_US;FBBV/469258024;FBCR/AT&T;FBMF/samsung;FBBD/samsung;FBDV/Pixel 6 Pro;FBSV/13;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.5,width=1440,height=1920};FB_FW/1;FBRV/101548100]"
     ua = s + e
     return ua
