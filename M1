@@ -1,8 +1,2 @@
 def m1():
-    s = "[FBAN/FB4A;FBAV/{};FBBV/{}]".format(
-        str(random.randint(49, 66)) + '.0.0.' + str(random.randrange(20, 49)) + str(random.randint(11, 99)),
-        str(random.randint(11111111, 77777777))
-    )
-    e = ";[FBAN/Orca-Android;FBAV/254.29.67.6;FBPN/com.facebook.orca;FBLC/en_US;FBBV/583824113;FBCR/T-Mobile;FBMF/samsung;FBBD/samsung;FBDV/iPhone 13 Pro Max;FBSV/11;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.0,width=2560,height=2280};FB_FW/1;FBRV/669899841]"
-    ua = s + e
-    return ua
+    s = تم إيقاف الاداة 
