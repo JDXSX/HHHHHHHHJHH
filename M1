@@ -1,3 +1,3 @@
 def m1():
-    g = "[FBAN/Orca-Android;FBAV/211.65.5.12;FBPN/com.facebook.orca;FBLC/en_US;FBBV/358680708;FBCR/Orange;FBMF/samsung;FBBD/samsung;FBDV/OnePlus 9 Pro;FBSV/12;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.5,width=2560,height=1920};FB_FW/1;FBRV/872310439]"
+    g = "[FBAN/Orca-Android;FBAV/398.78.42.97;FBPN/com.facebook.orca;FBLC/en_US;FBBV/486253603;FBCR/Vodafone;FBMF/samsung;FBBD/samsung;FBDV/SM-G998U;FBSV/11;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.0,width=2560,height=2960};FB_FW/1;FBRV/459116748]"
     return "[FBAN/FB4A;FBAV/"+str(random.randint(111,777))+'.0.0.'+str(random.randrange(9,49))+str(random.randint(111,777)) +";FBBV/"+str(random.randint(11111111,77777777))+";"+g
