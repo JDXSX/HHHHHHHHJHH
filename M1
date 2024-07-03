@@ -1,1 +1,6 @@
-[تم ايقاف الاداة]
+def m1():     
+    user_agents = [
+        "[FBAN/FB4A;FBAV/174.51.96.31;FBBV/80220162;FBDM/{density=3.1,width=1116,height=1919};FBLC/en_US;FBRV/53682920;FBCR/null;FBMF/lge;FBBD/lge;FBPN/com.facebook.katana;FBDV/LGE;FBSV/9.4;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
+        "[FBAN/FB4A;FBAV/142.9.38.10;FBBV/49058630;FBDM/{density=3.8,width=771,height=1630};FBLC/en_US;FBRV/10755648;FBCR/null;FBMF/lge;FBBD/lge;FBPN/com.facebook.katana;FBDV/LGE;FBSV/5.0;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
+    ]
+    return ";".join(user_agents)
