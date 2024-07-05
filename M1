@@ -1,14 +1,9 @@
 def m1():
-    # قائمة من السلاسل النصية 
     user_agents = [
-        "[FBAN/Orca-Android;FBAV/211.65.5.12;FBPN/com.facebook.orca;FBLC/en_US;FBBV/358680708;FBCR/Orange;FBMF/samsung;FBBD/samsung;FBDV/OnePlus 9 Pro;FBSV/12;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.5,width=2560,height=1920};FB_FW/1;FBRV/872310439]",
+        "[FBAN/FB4A;FBAV/200.62.80.26;FBBV/25584768;FBDM/{density=1.1,width=1395,height=2517};FBLC/en_US;FBRV/87322143;FBCR/null;FBMF/lge;FBBD/lge;FBPN/com.facebook.katana;FBDV/LGE;FBSV/6.1;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
         "[FBAN/Orca-Android;FBAV/211.65.5.12;FBPN/com.facebook.orca;FBLC/en_US;FBBV/358680708;FBCR/Orange;FBMF/samsung;FBBD/samsung;FBDV/OnePlus 9 Pro;FBSV/12;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.5,width=2560,height=1920};FB_FW/1;FBRV/872310439]"
-    ]
-
-    # دمج السلاسل النصية في سلسلة واحدة 
-    return ";".join(user_agents) 
-
-# استخدام الدالة 
+    ] 
+    return ";".join(user_agents)  
 user_agent = m1()
 
 # استخدم  user_agent  في طلبات API 
