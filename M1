@@ -1,6 +1,4 @@
-   import requests
-   import random
-   from time import sleep  # أضف هذه الخطوة إذا كنت تريد استخدام  sleep
+from time import sleep  # أضف هذه الخطوة إذا كنت تريد استخدام  sleep
 
    def m1():
        user_agents = [
