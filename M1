@@ -8,11 +8,16 @@ def m1():
     # دمج السلاسل النصية في سلسلة واحدة 
     return ";".join(user_agents) 
 
-token = input('TOKEN : 7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI')
-ID = input('ID : 5210419138')
-# إرسال الكلمات التي تحتوي على [JEAB-OK] إلى بوت تلجرام
+# استخدام الدالة 
+user_agent = m1()
+
+# استخدم  user_agent  في طلبات API 
+token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
+ID = '5210419138'
 for word in words:
     if '[JEAB-OK]' in word:
-        # إزالة [JEAB-OK] من الكلمة
-        word = word.replace('[JEAB-OK]', ''
-        requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={word}')
+         [JEAB-OK] 
+        word = word.replace('[JEAB-OK]', '')
+
+headers = {'User-Agent': user_agent}
+requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
