@@ -1,8 +1,8 @@
 def m1():
     # قائمة من السلاسل النصية 
     user_agents = [
-        "[FBAN/FBDroid;FBAV/291.22.90.38;FBBV/18262909;FBDM/{density=3.5,width=807,height=2167};FBLC/en_US;FBRV/44629670;FBCR/null;FBMF/Moore Inc;FBBD/apple;FBPN/com.facebook.katana;FBDV/aarch64;FBSV/8.5;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
-        "[FBAN/FBDroid;FBAV/291.22.90.38;FBBV/18262909;FBDM/{density=3.5,width=807,height=2167};FBLC/en_US;FBRV/44629670;FBCR/null;FBMF/Moore Inc;FBBD/apple;FBPN/com.facebook.katana;FBDV/aarch64;FBSV/8.5;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
+        "[FBAN/FB4A;FBAV/147.22.77.58;FBBV/52011421;FBDM/{density=2.6,width=753,height=2226};FBLC/en_US;FBRV/66427317;FBCR/null;FBMF/lge;FBBD/lge;FBPN/com.facebook.katana;FBDV/LGE;FBSV/7.6;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
+        "[FBAN/Orca-Android;FBAV/212.39.71.14;FBPN/com.facebook.orca;FBLC/en_US;FBBV/603499448;FBCR/Vodafone;FBMF/samsung;FBBD/samsung;FBDV/OnePlus 9 Pro;FBSV/11;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=4.0,width=1920,height=2960};FB_FW/1;FBRV/669275963]"
     ]
 
     # دمج السلاسل النصية في سلسلة واحدة 
