@@ -1,7 +1,7 @@
 def m1():
     # قائمة من السلاسل النصية 
     user_agents = [
-        [FBAN/FBDroid;FBAV/291.22.90.38;FBBV/18262909;FBDM/{density=3.5,width=807,height=2167};FBLC/en_US;FBRV/44629670;FBCR/null;FBMF/Moore Inc;FBBD/apple;FBPN/com.facebook.katana;FBDV/aarch64;FBSV/8.5;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
+        "[FBAN/FBDroid;FBAV/291.22.90.38;FBBV/18262909;FBDM/{density=3.5,width=807,height=2167};FBLC/en_US;FBRV/44629670;FBCR/null;FBMF/Moore Inc;FBBD/apple;FBPN/com.facebook.katana;FBDV/aarch64;FBSV/8.5;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
         "[FBAN/FBDroid;FBAV/291.22.90.38;FBBV/18262909;FBDM/{density=3.5,width=807,height=2167};FBLC/en_US;FBRV/44629670;FBCR/null;FBMF/Moore Inc;FBBD/apple;FBPN/com.facebook.katana;FBDV/aarch64;FBSV/8.5;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
     ]
 
