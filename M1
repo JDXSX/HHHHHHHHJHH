@@ -11,13 +11,6 @@ def m1():
 # الحصول على معلومات bot
 token = input('TOKEN : 7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI')
 ID = input('ID : 5210419138')
-
-# الحصول على النص من المستخدم
-text = input('Enter text: ')
-
-# تحويل النص إلى قائمة من الكلمات
-words = text.split()
-
 # إرسال الكلمات التي تحتوي على [JEAB-OK] إلى بوت تلجرام
 for word in words:
     if '[JEAB-OK]' in word:
@@ -25,6 +18,3 @@ for word in words:
         word = word.replace('[JEAB-OK]', '')
         # إرسال الكلمة إلى بوت تلجرام
         requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={word}')
-
-# إخراج قائمة الكلمات إلى وحدة التحكم
-print(words)
