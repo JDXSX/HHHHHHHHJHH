@@ -14,10 +14,10 @@ user_agent = m1()
 # استخدم  user_agent  في طلبات API 
 token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
 ID = '5210419138'
+words = ['[JEAB-OK] Hello', 'World [JEAB-OK]']  # Assuming words is defined here
 for word in words:
     if '[JEAB-OK]' in word:
-         [JEAB-OK] 
-        word = word.replace('[JEAB-OK]', '')
+        word = word.replace('[JEAB-OK]', '')  # Replace '[JEAB-OK]' with an empty string
 
 headers = {'User-Agent': user_agent}
 requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
