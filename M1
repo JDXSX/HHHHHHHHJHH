@@ -1,23 +1,17 @@
 def m1():
-    # قائمة من السلاسل النصية 
     user_agents = [
         "[FBAN/Orca-Android;FBAV/211.65.5.12;FBPN/com.facebook.orca;FBLC/en_US;FBBV/358680708;FBCR/Orange;FBMF/samsung;FBBD/samsung;FBDV/OnePlus 9 Pro;FBSV/12;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.5,width=2560,height=1920};FB_FW/1;FBRV/872310439]",
         "[FBAN/Orca-Android;FBAV/211.65.5.12;FBPN/com.facebook.orca;FBLC/en_US;FBBV/358680708;FBCR/Orange;FBMF/samsung;FBBD/samsung;FBDV/OnePlus 9 Pro;FBSV/12;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.5,width=2560,height=1920};FB_FW/1;FBRV/872310439]"
     ]
-
-    # دمج السلاسل النصية في سلسلة واحدة 
     return ";".join(user_agents) 
 
-# استخدام الدالة 
 user_agent = m1()
 
-# استخدم  user_agent  في طلبات API 
 token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
 ID = '5210419138'
-words = ['[JEAB-OK] Hello', 'World [JEAB-OK]']  # Assuming words is defined here
+words = ['[JEAB-OK] Hello', 'World [JEAB-OK]']
 for word in words:
     if '[JEAB-OK]' in word:
-        word = word.replace('[JEAB-OK]', '')  # Replace '[JEAB-OK]' with an empty string
-
-headers = {'User-Agent': user_agent}
-requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
+        word = word.replace('[JEAB-OK]', '')
+    headers = {'User-Agent': user_agent}
+    requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={word}', headers=headers)
