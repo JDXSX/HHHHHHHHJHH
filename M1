@@ -8,13 +8,11 @@ def m1():
     # دمج السلاسل النصية في سلسلة واحدة 
     return ";".join(user_agents) 
 
-# الحصول على معلومات bot
 token = input('TOKEN : 7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI')
 ID = input('ID : 5210419138')
 # إرسال الكلمات التي تحتوي على [JEAB-OK] إلى بوت تلجرام
 for word in words:
     if '[JEAB-OK]' in word:
         # إزالة [JEAB-OK] من الكلمة
-        word = word.replace('[JEAB-OK]', '')
-        # إرسال الكلمة إلى بوت تلجرام
+        word = word.replace('[JEAB-OK]', ''
         requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={word}')
