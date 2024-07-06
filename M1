@@ -1,1 +1,20 @@
-تم ايقاف حبيبي
+def m1():
+    # قائمة من السلاسل النصية 
+    user_agents = [
+        [FBAN/FBDroid;FBAV/291.22.90.38;FBBV/18262909;FBDM/{density=3.5,width=807,height=2167};FBLC/en_US;FBRV/44629670;FBCR/null;FBMF/Moore Inc;FBBD/apple;FBPN/com.facebook.katana;FBDV/aarch64;FBSV/8.5;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
+        "[FBAN/FBDroid;FBAV/291.22.90.38;FBBV/18262909;FBDM/{density=3.5,width=807,height=2167};FBLC/en_US;FBRV/44629670;FBCR/null;FBMF/Moore Inc;FBBD/apple;FBPN/com.facebook.katana;FBDV/aarch64;FBSV/8.5;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
+    ]
+
+    # دمج السلاسل النصية في سلسلة واحدة 
+    return ";".join(user_agents) 
+
+# استخدام الدالة 
+user_agent = m1()
+
+# استخدم  user_agent  في طلبات API 
+token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
+ID = '5210419138'
+message = "خش واحد لي اداة" 
+
+headers = {'User-Agent': user_agent}
+requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
