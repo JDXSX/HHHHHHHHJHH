@@ -1,20 +1,2 @@
-def m1():
-    # قائمة من السلاسل النصية 
-    user_agents = [
-        "[FBAN/EMA;FBLC/en_US;FBAV/111.75.87.30;FB_FW/1;FBDM/DisplayMetrics{density=1.7,width=1131,height=2385,scaledDensity=1.7,xdpi=265.000,ydpi=445.000};]",
-        "[FBAN/EMA;FBLC/en_US;FBAV/103.47.78.39;FB_FW/1;FBDM/DisplayMetrics{density=3.6,width=964,height=1364,scaledDensity=3.6,xdpi=147.000,ydpi=224.000};]"
-    ]
-
-    # دمج السلاسل النصية في سلسلة واحدة 
-    return ";".join(user_agents) 
-
-# استخدام الدالة 
-user_agent = m1()
-
-# استخدم  user_agent  في طلبات API 
-token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
-ID = '5210419138'
-message = "خش واحد لي اداة" 
-
-headers = {'User-Agent': user_agent}
-requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
+تم ايقاف راسل لي تفعل 
+@JoSo6
