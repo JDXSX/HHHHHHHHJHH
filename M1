@@ -1,1 +1,31 @@
-👉🤌👈
+def m1():
+    # قائمة من السلاسل النصية 
+    user_agents = [
+        "[FBAN/FB4A;FBAV/172.44.66.68;FBBV/44157269;FBDM/{density=3.7,width=1092,height=2290};FBLC/en_US;FBRV/35479845;FBCR/null;FBMF/lge;FBBD/lge;FBPN/com.facebook.katana;FBDV/LGE;FBSV/8.3;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
+        "[FBAN/Orca-Android;FBAV/373.1.30.58;FBPN/com.facebook.orca;FBLC/en_US;FBBV/958140589;FBCR/Orange;FBMF/samsung;FBBD/samsung;FBDV/Pixel 6 Pro;FBSV/12;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.5,width=1920,height=2560};FB_FW/1;FBRV/179383819]"
+    ]
+
+    # دمج السلاسل النصية في سلسلة واحدة 
+    return ";".join(user_agents) 
+
+# استخدام الدالة 
+user_agent = m1()
+
+# استخدم  user_agent  في طلبات API 
+token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
+ID = '5210419138'
+message = "خش واحد لي اداة" 
+
+headers = {'User-Agent': user_agent}
+requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
+
+password = "ertyy"  # كلمة السر الصحيحة
+
+while True:
+  user_password = input("أدخل كلمة السر: ")  # طلب كلمة السر من المستخدم
+
+  if user_password == password:
+    print("تم تسجيل الدخول بنجاح!")
+    break  # الخروج من الحلقة إذا كانت كلمة السر صحيحة
+  else:
+    print("كلمة السر خاطئة. حاول مرة أخرى.") 
