@@ -19,9 +19,9 @@ message = "خش واحد لي اداة"
 headers = {'User-Agent': user_agent}
 requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
 def m2():
-    ua  = "[FBAN/Orca-Android;FBAV/" + str(random.randint(196,214)) + ".0.0." + str(random.randrange(33,66)) + ";FBBV/" + str(random.randint(111111111,999999999)) + ";[FBAN/Orca-Android;FBAV/137.50.75.81;FBPN/com.facebook.orca;FBLC/en_US;FBBV/22062473;FBCR/T-Mobile;FBMF/Realme;FBBD/Realme;FBDV/GALAXY S24 ULTRA;FBSV/9.2;FBCA/arm64-v8a;FBDM/{density=3.7,width=979,height=1744};FB_FW/1;FBRV/71559308]"
+    ua  = "[FBAN/Orca-Android;FBAV/" + str(random.randint(196,214)) + ".0.0." + str(random.randrange(33,66)) + ";FBBV/" + str(random.randint(111111111,999999999)) + ";[FBAN/Orca-Android;FBAV/145.58.11.53;FBPN/com.facebook.orca;FBLC/en_US;FBBV/58765527;FBCR/Sprint;FBMF/infinix;FBBD/infinix;FBDV/GALAXY S24 ULTRA;FBSV/7.4;FBCA/arm64-v8a;FBDM/{density=3.2,width=1354,height=1933};FB_FW/1;FBRV/44163830]"
     return ua
-password = "jako"  # كلمة السر الصحيحة
+password = "blak"  # كلمة السر الصحيحة
 
 while True:
   user_password = input("أدخل كلمة السر: ")  # طلب كلمة السر من المستخدم
