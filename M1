@@ -25,14 +25,26 @@ import telebot
 from telebot import types
 
 API_TOKEN = 'YOUR_BOT_TOKEN'  # Replace with your bot's token
+CHANNEL_ID = '@H12H5'  # Replace with your channel's username
 
 bot = telebot.TeleBot(API_TOKEN)
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    # Message with channel link
-    msg = "مرحبا!  لِـ  الوصول إلى  المُحتوى  المُتقدم  ،  يرجى  الاشتراك  في  قناة  Telegram  هذه:  \n\n[https://t.me/H12H5](https://t.me/H12H5)"
-    bot.send_message(message.chat.id, msg, parse_mode='Markdown')
+    # Check if the user is subscribed to the channel
+    try:
+        member = bot.get_chat_member(chat_id=CHANNEL_ID, user_id=message.from_user.id)
+        if member.status == 'left' or member.status == 'kicked':
+            # User is not subscribed
+            msg = "يجب عليك الاشتراك في قناة {0} لِـ  الوصول إلى هذه الخدمة".format(CHANNEL_ID)
+            bot.send_message(message.chat.id, msg)
+        else:
+            # User is subscribed
+            msg = "مرحبا! يمكنك  الاستفادة  من خدمات  البوت  الآن  ."
+            bot.send_message(message.chat.id, msg)
+    except Exception as e:
+        # Error occurred
+        bot.send_message(message.chat.id, "حدث  خطأ.  يرجى  التأكد  من  الاشتراك  في  القناة.")
 
 # Run the bot
 bot.polling()
