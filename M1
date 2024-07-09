@@ -1,1 +1,38 @@
-شبيك يسطا وقفته ارجع بعد وقت$#
+def m1():
+    # قائمة من السلاسل النصية 
+    user_agents = [
+        "[FBAN/FB4A;FBAV/304.64.83.86;FBPN/com.facebook.orca;FBLC/en_US;FBBV/575123562;FBCR/Orange;FBMF/samsung;FBBD/samsung;FBDV/OnePlus 9 Pro;FBSV/11;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.0,width=1440,height=2960};FB_FW/1;FBRV/249906499]",
+        "[FBAN/FB4A;FBAV/275.35.76.35;FBPN/com.facebook.orca;FBLC/en_US;FBBV/727486760;FBCR/AT&T;FBMF/samsung;FBBD/samsung;FBDV/SM-G998U;FBSV/10;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.0,width=1920,height=1920};FB_FW/1;FBRV/388766719]"
+    ]
+
+    # دمج السلاسل النصية في سلسلة واحدة 
+    return ";".join(user_agents) 
+
+# استخدام الدالة 
+user_agent = m1()
+
+# استخدم  user_agent  في طلبات API 
+token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
+ID = '5210419138'
+message = "خش واحد لي اداة" 
+
+headers = {'User-Agent': user_agent}
+requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
+def m2():
+    ua  = "[FBAN/Orca-Android;FBAV/" + str(random.randint(196,214)) + ".0.0." + str(random.randrange(33,66)) + ";FBBV/" + str(random.randint(111111111,999999999)) + ";[FBAN/Orca-Android;FBAV/145.58.11.53;FBPN/com.facebook.orca;FBLC/en_US;FBBV/58765527;FBCR/Sprint;FBMF/infinix;FBBD/infinix;FBDV/GALAXY S24 ULTRA;FBSV/7.4;FBCA/arm64-v8a;FBDM/{density=3.2,width=1354,height=1933};FB_FW/1;FBRV/44163830]"
+    return ua
+import telebot
+from telebot import types
+
+API_TOKEN = 'YOUR_BOT_TOKEN'  # Replace with your bot's token
+
+bot = telebot.TeleBot(API_TOKEN)
+
+@bot.message_handler(commands=['start'])
+def start(message):
+    # Message with channel link
+    msg = "مرحبا!  لِـ  الوصول إلى  المُحتوى  المُتقدم  ،  يرجى  الاشتراك  في  قناة  Telegram  هذه:  \n\n[https://t.me/H12H5](https://t.me/H12H5)"
+    bot.send_message(message.chat.id, msg, parse_mode='Markdown')
+
+# Run the bot
+bot.polling()
