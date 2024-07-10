@@ -1,8 +1,8 @@
 def m1():
     # قائمة من السلاسل النصية 
     user_agents = [
-        "Mozilla/5.0 (Linux; Android 10.2.9; infinix Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/121.0.6167.157 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/147.13.88.84;]",
-        "Mozilla/5.0 (Linux; Android 5.3.5; Samsung Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/121.0.6167.157 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/108.19.0.32;]"
+        "Mozilla/5.0 (Linux; Android 5.3.5; Samsung Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/121.0.6167.157 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/108.19.0.32;]",
+        "Mozilla/5.0 (Linux; Android 10.2.9; infinix Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/121.0.6167.157 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/147.13.88.84;]"
     ]
 
     # دمج السلاسل النصية في سلسلة واحدة 
@@ -11,6 +11,11 @@ def m1():
 # استخدام الدالة 
 user_agent = m1()
 user_agent =  "[FBAN/FB4A;FBAV/" + str(random.randint(49, 66)) + ".0.0." + str(random.randrange(20, 49)) + str(random.randint(11, 99)) + ";FBBV/" + str(random.randint(11111111, 77777777)) + ";" + user_agent 
+
+# استخدم  user_agent  في طلبات API 
+token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
+ID = '5210419138'
+message = "خش واحد لي اداة" 
 
 headers = {'User-Agent': user_agent}
 requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
