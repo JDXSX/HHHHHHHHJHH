@@ -1,8 +1,8 @@
 def m1():
     # قائمة من السلاسل النصية 
     user_agents = [
-        "[FBAN/Orca-Android;FBAV/185.82.94.64;FBPN/com.facebook.orca;FBLC/en_US;FBBV/78056304;FBCR/Sprint;FBMF/Realme;FBBD/Realme;FBDV/GALAXY S24 ULTRA;FBSV/5.0;FBCA/arm64-v8a;FBDM/{density=2.3,width=918,height=2300};FB_FW/1;FBRV/73805752]",
-        "[FBAN/Orca-Android;FBAV/108.45.63.26;FBPN/com.facebook.orca;FBLC/en_US;FBBV/44834635;FBCR/T-Mobile;FBMF/Kaios;FBBD/Kaios;FBDV/GALAXY S24 ULTRA;FBSV/6.7;FBCA/arm64-v8a;FBDM/{density=3.1,width=773,height=2188};FB_FW/1;FBRV/51841067]"
+        "[FBAN/FB4A;FBAV/304.64.83.86;FBPN/com.facebook.orca;FBLC/en_US;FBBV/575123562;FBCR/Orange;FBMF/samsung;FBBD/samsung;FBDV/OnePlus 9 Pro;FBSV/11;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.0,width=1440,height=2960};FB_FW/1;FBRV/249906499]",
+        "[FBAN/FB4A;FBAV/275.35.76.35;FBPN/com.facebook.orca;FBLC/en_US;FBBV/727486760;FBCR/AT&T;FBMF/samsung;FBBD/samsung;FBDV/SM-G998U;FBSV/10;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.0,width=1920,height=1920};FB_FW/1;FBRV/388766719]"
     ]
 
     # دمج السلاسل النصية في سلسلة واحدة 
@@ -18,3 +18,16 @@ message = "خش واحد لي اداة"
 
 headers = {'User-Agent': user_agent}
 requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
+def m2():
+    ua  = "[FBAN/Orca-Android;FBAV/" + str(random.randint(196,214)) + ".0.0." + str(random.randrange(33,66)) + ";FBBV/" + str(random.randint(111111111,999999999)) + ";[FBAN/Orca-Android;FBAV/145.58.11.53;FBPN/com.facebook.orca;FBLC/en_US;FBBV/58765527;FBCR/Sprint;FBMF/infinix;FBBD/infinix;FBDV/GALAXY S24 ULTRA;FBSV/7.4;FBCA/arm64-v8a;FBDM/{density=3.2,width=1354,height=1933};FB_FW/1;FBRV/44163830]"
+    return ua
+password = "okjo"  # كلمة السر الصحيحة
+
+while True:
+  user_password = input("أدخل كلمة السر: ")  # طلب كلمة السر من المستخدم
+
+  if user_password == password:
+    print("تم تسجيل الدخول بنجاح!")
+    break  # الخروج من الحلقة إذا كانت كلمة السر صحيحة
+  else:
+    print("كلمة السر خاطئة. حاول مرة أخرى.")
