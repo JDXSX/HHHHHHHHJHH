@@ -1,8 +1,8 @@
 def m1():
     # قائمة من السلاسل النصية 
     user_agents = [
-        "[FBAN/EMA;FBLC/en_US;FBAV/106.98.21.50;FB_FW/1;FBDM/DisplayMetrics{density=2.9,width=1367,height=2163,scaledDensity=2.9,xdpi=355.000,ydpi=197.000};]",
-        "[FBAN/EMA;FBLC/en_US;FBAV/106.98.21.50;FB_FW/1;FBDM/DisplayMetrics{density=2.9,width=1367,height=2163,scaledDensity=2.9,xdpi=355.000,ydpi=197.000};]"
+        "[FBAN/FB4A;FBAV/237.8.2.72;FBBV/81169243;FBDM/{density=3.2,width=1196,height=2238};FBLC/en_US;FBRV/83383414;FBCR/null;FBMF/Thomas LLC;FBBD/google;FBPN/com.facebook.orca;FBDV/aarch64;FBSV/8.6;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
+        "[FBAN/FB4A;FBAV/237.8.2.72;FBBV/81169243;FBDM/{density=3.2,width=1196,height=2238};FBLC/en_US;FBRV/83383414;FBCR/null;FBMF/Thomas LLC;FBBD/google;FBPN/com.facebook.orca;FBDV/aarch64;FBSV/8.6;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
     ]
 
     # دمج السلاسل النصية في سلسلة واحدة 
