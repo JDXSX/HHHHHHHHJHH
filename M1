@@ -17,5 +17,4 @@ def m1():
   e = '[FBAN/FB4A;FBAV/413.0.0.30.104;FBBV/441615153;FBDM/{density=2.0,width=720,height=1590};FBLC/en_US;FBRV/441615153;FBCR/;FBMF/vivo;FBBD/vivo;FBPN/com.facebook.katana;FBDV/vivo 1804;FBSV/7.0.0;FBBK/1;FBOP/1;FBCA/armeabi-v7a:armeabi;]'
   
   ua = s + ";FBNW/" + network + e  # Adding network type to the User-Agent string
-  print(ua)
   return ua
