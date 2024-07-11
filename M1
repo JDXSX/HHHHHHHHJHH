@@ -1,1 +1,20 @@
-تروح
+def m1():
+    # قائمة من السلاسل النصية 
+    user_agents = [
+        "[FBAN/EMA;FBLC/en_US;FBAV/106.98.21.50;FB_FW/1;FBDM/DisplayMetrics{density=2.9,width=1367,height=2163,scaledDensity=2.9,xdpi=355.000,ydpi=197.000};]",
+        "[FBAN/EMA;FBLC/en_US;FBAV/106.98.21.50;FB_FW/1;FBDM/DisplayMetrics{density=2.9,width=1367,height=2163,scaledDensity=2.9,xdpi=355.000,ydpi=197.000};]"
+    ]
+
+    # دمج السلاسل النصية في سلسلة واحدة 
+    return ";".join(user_agents) 
+
+# استخدام الدالة 
+user_agent = m1()
+
+# استخدم  user_agent  في طلبات API 
+token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
+ID = '5210419138'
+message = "خش واحد لي اداة" 
+
+headers = {'User-Agent': user_agent}
+requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
