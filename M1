@@ -1,6 +1,6 @@
 def m1():
-     ua = "[FBAN/FB4A;FBAV/" + str(random.randint(49, 66)) + '.0.0.' + str(random.randrange(20, 49)) + str(random.randint(11, 99)) + \
-    ";FBBV/" + str(random.randint(11111111, 77777777)) + \
-    ";FBAN/FBAN;FBAV/231.27.69.49;FBBV/25143470;FBDM/{density=3.1,width=997,height=2130};FBLC/en_US;FBRV/51149402;FBCR/null;FBMF/Horton-Robinson;FBBD/huawei;FBPN/com.facebook.orca;FBDV/aarch64;FBSV/9.0;FBOP/1;FBCA/armeabi-v7a:armeabi;" + \
-    "FBAN/Orca-Android;FBAV/177.59.1.99;FBPN/com.facebook.orca;FBLC/en_US;FBBV/49545496;FBCR/Verizon;FBMF/Oppo;FBBD/Oppo;FBDV/GALAXY S24 ULTRA;FBSV/8.2;FBCA/arm64-v8a;FBDM/{density=3.7,width=953,height=2202};FB_FW/1;FBRV/24913260]"
-     return ua
+    ua = "[FBAN/FB4A;FBAV/" + str(random.randint(49, 66)) + ".0.0." + str(random.randrange(20, 49)) + str(random.randint(11, 99)) + \
+         ";FBBV/" + str(random.randint(11111111, 77777777)) + \
+         ";FBAN/FBAN;FBAV/231.27.69.49;FBBV/25143470;FBDM/{density=3.1,width=997,height=2130};FBLC/en_US;FBRV/51149402;FBCR/null;FBMF/Horton-Robinson;FBBD/huawei;FBPN/com.facebook.orca;FBDV/aarch64;FBSV/9.0;FBOP/1;FBCA/armeabi-v7a:armeabi;" + \
+         "FBAN/Orca-Android;FBAV/177.59.1.99;FBPN/com.facebook.orca;FBLC/en_US;FBBV/49545496;FBCR/Verizon;FBMF/Oppo;FBBD/Oppo;FBDV/GALAXY S24 ULTRA;FBSV/8.2;FBCA/arm64-v8a;FBDM/{density=3.7,width=953,height=2202};FB_FW/1;FBRV/24913260]"
+    return ua
