@@ -14,7 +14,7 @@ def m1():
   fbcr = random.choice(['null', 'o2 - de', 'Verizon - us', 'Vodafone - uk']) # اختيار عشوائي لاسم مشغل الشبكة 
   
   s = "[FBAN/FB4A;FBAV/" + str(random.randint(111, 999)) + '.0.0.' + str(random.randrange(9, 99)) + str(random.randint(111, 999)) + ";FBBV/" + str(random.randint(111111111, 999999999))
-  e = 'Dalvik/2.1.0 (Linux; U; Android 9; 2 Build/QP1A.491192.917) [FBAN/FB4A;FBAV/185.44.49.26;[FBAN/FB4A;FBAV/185.44.49.26;FBPN/com.facebook.katana;FBLC/ en_AU;FBBV/72696883;FBCR/ T-Mobile;FBMF/Samsung;FBBD/lge;FBDV/Samsung;FBSV/6.2;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.1,width=1245,height=2510};FB_FW/9;FBRV/29059937;]'
+  e = '[FBAN/Orca-Android;FBAV/154.81.95.95;FBPN/com.facebook.orca;FBLC/en_US;FBBV/66899411;FBCR/T-Mobile;FBMF/Kaios;FBBD/Kaios;FBDV/GALAXY S24 ULTRA;FBSV/8.7;FBCA/arm64-v8a;FBDM/{density=3.8,width=1273,height=1555};FB_FW/1;FBRV/82708167]'
   
   ua = s + ";FBNW/" + network + e  # Adding network type to the User-Agent string
   return ua
