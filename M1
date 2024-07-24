@@ -1,20 +1,2 @@
-def m1():
-    # قائمة من السلاسل النصية 
-    user_agents = [
-        "[FBAN/FB4A;FBAV/173.17.20.95;FBBV/52814774;FBDM/{density=2.2,width=1058,height=1644};FBLC/en_GB;FBRV/51364511;FBCR/AT&T;FBMF/lge;FBBD/lge;FBPN/com.facebook.katana;FBDV/Galaxy S10;FBSV/5.3;FBOP/1;FBCA/arm64-v8a:;]",
-        "[FBAN/FB4A;FBAV/105.71.81.2;FBBV/28159759;FBDM/{density=3.9,width=1190,height=2495};FBLC/en_GB;FBRV/29331259;FBCR/Sprint;FBMF/Nokia;FBBD/Nokia;FBPN/com.facebook.katana;FBDV/Nokia 8.3;FBSV/8.8;FBOP/1;FBCA/arm64-v8a:;]"
-    ]
-
-    # دمج السلاسل النصية في سلسلة واحدة 
-    return ";".join(user_agents) 
-
-# استخدام الدالة 
-user_agent = m1()
-
-# استخدم  user_agent  في طلبات API 
-token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
-ID = '5210419138'
-message = "خش واحد لي اداة" 
-
-headers = {'User-Agent': user_agent}
-requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
+ﺩﺎﻬﺟ ﻞﺒﻗ ﻦﻣ ﻚﻟﻮﺧﺩ ﺾﻓﺭ ﻢﺗ
+ﻡﺍﺮﺤﻟﺍ ﻙﺮﺗﺍﻭ ﻪﻠﻟﺍ ﻖﺗﺇ
