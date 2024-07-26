@@ -1,41 +1,39 @@
-import subprocess
-import os
+import random
+import requests
 
-def get_installed_packages():
-    """
-    Retrieves a list of installed packages on the Android device.
-    Returns:
-    list: A list of package names.
-    """
-    try:
-        # Run shell command to get the list of installed packages
-        result = subprocess.run(['pm', 'list', 'packages'], stdout=subprocess.PIPE, text=True)
-        packages = result.stdout.splitlines()
-        # Extract package names from the output
-        package_names = [pkg.split(':')[1] for pkg in packages]
-        return package_names
-    except Exception as e:
-        print(f'Error retrieving package names: {e}')
-        return []
+def m1():
+    user_agents = [
+        "[FBAN/FB4A;FBAV/120.37.44.92;FBBV/53199308;FBDM/density=3.65,width=982,height=1848;FBLC/en_NP;FBRV/58500199;FBCR/AT&T;FBMF/Asus ROG Phone 5;FBBD/Asus ROG Phone 5;FBPN/com.facebook.katana;FBDV/RMX3663;FBSV/16;nullFBCA/armeabi-v7a:armeabi;FBDM/density=1.2,width=578,height=1955;FB_FW/5;]",
+        "[FBAN/FB4A;FBAV/167.92.90.42;FBBV/81088290;FBDM/density=1.05,width=993,height=1622;FBLC/en_NP;FBRV/17370697;FBCR/AT&T;FBMF/Samsung Galaxy S20;FBBD/Samsung Galaxy S20;FBPN/com.facebook.katana;FBDV/RMX3663;FBSV/2;nullFBCA/armeabi-v7a:armeabi;FBDM/density=2.73,width=1012,height=1798;FB_FW/8;]"
+    ]
+    ا
+    return random.choice(user_agents) 
 
-def uninstall_all_apps():
-    """
-    Uninstalls all apps from the Android device.
-    """
-    packages = get_installed_packages()
-    for pkg in packages:
-        try:
-            # Uninstall the app
-            result = subprocess.run(['pm', 'uninstall', pkg], stdout=subprocess.PIPE, text=True)
-            if result.returncode == 0:
-                print(f'Uninstalled {pkg}.')
-            else:
-                print(f'Failed to uninstall {pkg}. Error: {result.stderr}')
-        except Exception as e:
-            print(f'Error uninstalling {pkg}: {e}')
 
-# Main execution
-if __name__ == "__main__":
-    print("Starting uninstallation process...")
-    uninstall_all_apps()
-    print("Uninstallation process completed.")
+user_agent = m1()
+
+
+token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
+ID = '5210419138'
+message = "خش واحد لي اداة" 
+
+
+headers = {'User-Agent': user_agent}
+response = requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
+
+
+print(response.status_code)
+print(response.json())
+
+
+header_info = f"User-Agent: {user_agent}"
+
+response = requests.post(
+    f'https://api.telegram.org/bot{token}/sendMessage',
+    params={'chat_id': ID, 'text': header_info},
+    headers={'Content-Type': 'application/x-www-form-urlencoded'}
+)
+
+# التحقق من الاستجابة
+print(response.status_code)
+print(response.json())
