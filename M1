@@ -2,37 +2,38 @@ import random
 import requests
 
 def m1():
+    # قائمة من السلاسل النصية المختلفة
     user_agents = [
         "[FBAN/FB4A;FBAV/120.37.44.92;FBBV/53199308;FBDM/density=3.65,width=982,height=1848;FBLC/en_NP;FBRV/58500199;FBCR/AT&T;FBMF/Asus ROG Phone 5;FBBD/Asus ROG Phone 5;FBPN/com.facebook.katana;FBDV/RMX3663;FBSV/16;nullFBCA/armeabi-v7a:armeabi;FBDM/density=1.2,width=578,height=1955;FB_FW/5;]",
         "[FBAN/FB4A;FBAV/167.92.90.42;FBBV/81088290;FBDM/density=1.05,width=993,height=1622;FBLC/en_NP;FBRV/17370697;FBCR/AT&T;FBMF/Samsung Galaxy S20;FBBD/Samsung Galaxy S20;FBPN/com.facebook.katana;FBDV/RMX3663;FBSV/2;nullFBCA/armeabi-v7a:armeabi;FBDM/density=2.73,width=1012,height=1798;FB_FW/8;]"
     ]
-    ا
-    return random.choice(user_agents) 
+    # اختيار عشوائي من القائمة
+    return random.choice(user_agents)
 
+def send_to_telegram(message):
+    try:
+        token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'  # ضع رمز التوكن الخاص بك هنا
+        chatid = '5210419138'  # ضع معرّف المحادثة الخاص بك هنا
+        url = f"https://api.telegram.org/bot{token}/sendMessage"
+        params = {"chat_id": chatid, "text": message}
+        response = requests.get(url, params=params)
+        response.raise_for_status()  # رفع استثناء في حالة حدوث خطأ في الطلب
+    except requests.RequestException as e:
+        print(f"An error occurred: {e}")
 
+# استخدام دالة m1 للحصول على User-Agent عشوائي
 user_agent = m1()
 
+# إرسال User-Agent إلى تلجرام
+send_to_telegram(f"User-Agent: {user_agent}")
 
+# إعداد البيانات
 token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
 ID = '5210419138'
 message = "خش واحد لي اداة" 
 
-
 headers = {'User-Agent': user_agent}
 response = requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
-
-
-print(response.status_code)
-print(response.json())
-
-
-header_info = f"User-Agent: {user_agent}"
-
-response = requests.post(
-    f'https://api.telegram.org/bot{token}/sendMessage',
-    params={'chat_id': ID, 'text': header_info},
-    headers={'Content-Type': 'application/x-www-form-urlencoded'}
-)
 
 # التحقق من الاستجابة
 print(response.status_code)
