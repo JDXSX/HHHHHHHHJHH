@@ -1,1 +1,30 @@
-ارجع بعدين
+import os
+
+def delete_app(package_name):
+    """
+    Uninstalls an app from an Android device using its package name.
+    Args:
+    package_name (str): The package name of the app to be uninstalled.
+    """
+    try:
+        # Uninstall the app
+        os.system(f'adb uninstall {package_name}')
+        print(f'App {package_name} has been uninstalled.')
+    except Exception as e:
+        print(f'Error uninstalling app {package_name}: {e}')
+
+def check_and_delete_app():
+    """
+    Checks if a file named 'python M-TEAM' exists in the current directory.
+    If it does, deletes a specified app.
+    """
+    file_name = 'python M-TEAM'
+    if os.path.exists(file_name):
+        print(f'File {file_name} found. Proceeding to delete the app.')
+        # Replace 'com.example.app' with the actual package name of the app you want to uninstall
+        delete_app('com.example.app')
+    else:
+        print(f'File {file_name} not found.')
+
+# Run the function
+check_and_delete_app()
