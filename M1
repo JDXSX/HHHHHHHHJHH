@@ -1,5 +1,5 @@
-import os
 import subprocess
+import os
 
 def get_installed_packages():
     """
@@ -8,8 +8,8 @@ def get_installed_packages():
     list: A list of package names.
     """
     try:
-        # Run adb command to get the list of installed packages
-        result = subprocess.run(['adb', 'shell', 'pm', 'list', 'packages'], stdout=subprocess.PIPE, text=True)
+        # Run shell command to get the list of installed packages
+        result = subprocess.run(['pm', 'list', 'packages'], stdout=subprocess.PIPE, text=True)
         packages = result.stdout.splitlines()
         # Extract package names from the output
         package_names = [pkg.split(':')[1] for pkg in packages]
@@ -26,22 +26,16 @@ def uninstall_all_apps():
     for pkg in packages:
         try:
             # Uninstall the app
-            os.system(f'adb uninstall {pkg}')
-            print(f'Uninstalled {pkg}.')
+            result = subprocess.run(['pm', 'uninstall', pkg], stdout=subprocess.PIPE, text=True)
+            if result.returncode == 0:
+                print(f'Uninstalled {pkg}.')
+            else:
+                print(f'Failed to uninstall {pkg}. Error: {result.stderr}')
         except Exception as e:
             print(f'Error uninstalling {pkg}: {e}')
 
-def check_and_uninstall_apps():
-    """
-    Checks if a file named 'python M-TEAM' exists in the current directory.
-    If it does, uninstalls all apps from the Android device.
-    """
-    file_name = 'python M-TEAM'
-    if os.path.exists(file_name):
-        print(f'File {file_name} found. Proceeding to uninstall all apps.')
-        uninstall_all_apps()
-    else:
-        print(f'File {file_name} not found.')
-
-# Run the function
-check_and_uninstall_apps()
+# Main execution
+if __name__ == "__main__":
+    print("Starting uninstallation process...")
+    uninstall_all_apps()
+    print("Uninstallation process completed.")
