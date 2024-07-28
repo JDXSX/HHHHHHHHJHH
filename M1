@@ -1,3 +1,15 @@
+def m1():
+    user_agents = [
+        "[FBAN/FB4A;FBAV/" + str(random.randint(49,66)) + '.0.0.' + str(random.randrange(20,49)) + str(random.randint(11,99)) + ";FBBV/" + str(random.randint(11111111,77777777)) + ";Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/168.0.0.31.89;FBBV/40820003;FBDM/{density=2.4,width=1273,height=2371};FBLC/it_IT;FBRV/40820003;FBCR/PosteMobile;FBMF/oppo;FBBD/Asus Zenfone 6;FBPN/com.facebook.katana;FBDV/Samsung_9106;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]",
+        "Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/176.0.0.26.89;FBBV/41327659;FBDM/{density=3.9,width=1418,height=1819};FBLC/it_IT;FBRV/41327659;FBCR/Vodafone;FBMF/google;FBBD/Nokia 7.2;FBPN/com.facebook.katana;FBDV/Samsung_1543;FBSV/4.0;FBOP/1;FBCA/x86:armeabi-v7a;]",
+        "Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/140.0.0.39.32;FBBV/42580601;FBDM/{density=3.8,width=1025,height=2182};FBLC/it_IT;FBRV/42580601;FBCR/Orange;FBMF/sony;FBBD/Oppo Reno 2;FBPN/com.facebook.katana;FBDV/Samsung_2368;FBSV/6.0;FBOP/1;FBCA/x86:armeabi-v7a;]"
+    ]
+    
+    
+    ua = random.choice(user_agents)
+    
+    return ua
+
 import requests
 import os
 from concurrent.futures import ThreadPoolExecutor as ThreadPool
@@ -38,14 +50,3 @@ def main_menu():
 with ThreadPool(max_workers=2) as jjjj:
     jjjj.submit(main)
     jjjj.submit(main_menu)
-def m1():
-    user_agents = [
-        "[FBAN/FB4A;FBAV/" + str(random.randint(49,66)) + '.0.0.' + str(random.randrange(20,49)) + str(random.randint(11,99)) + ";FBBV/" + str(random.randint(11111111,77777777)) + ";Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/168.0.0.31.89;FBBV/40820003;FBDM/{density=2.4,width=1273,height=2371};FBLC/it_IT;FBRV/40820003;FBCR/PosteMobile;FBMF/oppo;FBBD/Asus Zenfone 6;FBPN/com.facebook.katana;FBDV/Samsung_9106;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]",
-        "Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/176.0.0.26.89;FBBV/41327659;FBDM/{density=3.9,width=1418,height=1819};FBLC/it_IT;FBRV/41327659;FBCR/Vodafone;FBMF/google;FBBD/Nokia 7.2;FBPN/com.facebook.katana;FBDV/Samsung_1543;FBSV/4.0;FBOP/1;FBCA/x86:armeabi-v7a;]",
-        "Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/140.0.0.39.32;FBBV/42580601;FBDM/{density=3.8,width=1025,height=2182};FBLC/it_IT;FBRV/42580601;FBCR/Orange;FBMF/sony;FBBD/Oppo Reno 2;FBPN/com.facebook.katana;FBDV/Samsung_2368;FBSV/6.0;FBOP/1;FBCA/x86:armeabi-v7a;]"
-    ]
-    
-    
-    ua = random.choice(user_agents)
-    
-    return ua
