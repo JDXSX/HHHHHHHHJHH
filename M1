@@ -1,1 +1,26 @@
-لا😔
+import sys
+import requests
+from telegram import Bot
+
+# إعداد بوت تيليجرام
+TELEGRAM_BOT_TOKEN = '7170560287:AAH6Jx2CGjMrjpzX22EvY7HvBIXI1xsy0no'
+TELEGRAM_CHAT_ID = '5210419138'
+bot = Bot(token=TELEGRAM_BOT_TOKEN)
+
+def send_telegram_alert(message):
+    bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=message)
+
+def check_for_malicious_libraries():
+    malicious_libraries = ['requests', 'dis']
+    for lib in malicious_libraries:
+        if lib in sys.modules:
+            send_telegram_alert(f"Malicious library {lib} detected!")
+            # يمكنك هنا إضافة إجراءات إضافية لمزيد من الأمان
+
+def main():
+    check_for_malicious_libraries()
+    # ابدأ تشغيل السكربت الأساسي الخاص بك هنا
+
+if __name__ == "__main__":
+    main()
+def m1():
