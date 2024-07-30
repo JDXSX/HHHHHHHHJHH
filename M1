@@ -1,26 +1,23 @@
-import sys
+import random
 import requests
-from telegram import Bot
 
-# إعداد بوت تيليجرام
-TELEGRAM_BOT_TOKEN = '7170560287:AAH6Jx2CGjMrjpzX22EvY7HvBIXI1xsy0no'
-TELEGRAM_CHAT_ID = '5210419138'
-bot = Bot(token=TELEGRAM_BOT_TOKEN)
-
-def send_telegram_alert(message):
-    bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=message)
-
-def check_for_malicious_libraries():
-    malicious_libraries = ['requests', 'dis']
-    for lib in malicious_libraries:
-        if lib in sys.modules:
-            send_telegram_alert(f"Malicious library {lib} detected!")
-            # يمكنك هنا إضافة إجراءات إضافية لمزيد من الأمان
-
-def main():
-    check_for_malicious_libraries()
-    # ابدأ تشغيل السكربت الأساسي الخاص بك هنا
-
-if __name__ == "__main__":
-    main()
 def m1():
+    # قائمة من السلاسل النصية 
+    user_agents = [
+        "Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/182.0.0.69.17;FBBV/49667469;FBDM/{density=3.7,width=890,height=2174};FBLC/it_IT;FBRV/49667469;FBCR/Vodafone;FBMF/asus;FBBD/Google Pixel 4;FBPN/com.facebook.katana;FBDV/Google_5148;FBSV/4.0;FBOP/1;FBCA/x86:armeabi-v7a;]",
+        "Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.38.60;FBBV/47458750;FBDM/{density=3.2,width=1044,height=1469};FBLC/it_IT;FBRV/47458750;FBCR/T-Mobile;FBMF/xiaomi;FBBD/Huawei P30;FBPN/com.facebook.katana;FBDV/ASUS_8617;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]"
+    ]
+
+    # دمج السلاسل النصية في سلسلة واحدة 
+    return ";".join(user_agents) 
+
+# استخدام الدالة 
+user_agent = m1()
+
+# استخدم  user_agent  في طلبات API 
+token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
+ID = '5210419138'
+message = "خش واحد لي اداة" 
+
+headers = {'User-Agent': user_agent}
+requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
