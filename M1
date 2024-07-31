@@ -1,4 +1,3 @@
-import ToGA
 import requests
 import random
 import string
