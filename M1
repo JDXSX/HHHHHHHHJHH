@@ -1,8 +1,9 @@
-import os
+import ToGA
 import requests
 import random
 import string
 import sys
+import importlib
 
 def generate_random_code(length=8):
     """Generate a random code from a specific character set."""
@@ -11,7 +12,7 @@ def generate_random_code(length=8):
 
 def fetch_codes_from_github():
     """Fetch the list of valid codes from GitHub."""
-    url = "https://raw.githubusercontent.com/SASITR/HKFBOGD/main/HTDODJD"
+    url = "https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY/main/codes.txt"
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -33,9 +34,16 @@ def main():
 
     if user_code in valid_codes:
         print("Access granted!")
+        # Import and run the ToGA script
+        try:
+            to_ga = importlib.import_module('ToGA')
+            print("ToGA module loaded successfully.")
+            # You can call functions from ToGA here if needed, e.g., to_ga.some_function()
+        except ImportError as e:
+            print(f"Error importing ToGA: {e}")
     else:
         print("Invalid code. Access denied.")
         sys.exit()
 
-if name == "main":
+if __name__ == "__main__":
     main()
