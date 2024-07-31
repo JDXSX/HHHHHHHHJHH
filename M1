@@ -1,1 +1,42 @@
-ﺚﻳﺪﺤﺗ ﺽﺮﻐﻟ ﺕﺍﺩﻻﺍ ﻑﺎﻘﻳﺇ ﻢﺗ
+import os
+import sys
+import requests
+
+# فتح رابط في المتصفح
+def open_url(url):
+    os.system(f'start {url}')  # يستخدم على نظام ويندوز، إذا كنت على نظام آخر قد تحتاج لتغيير هذا الأمر.
+
+# تثبيت المكتبات المطلوبة إذا لم تكن موجودة
+def install_requirements():
+    os.system('pip install requests')
+
+# التحقق من وجود مكتبات معينة وتثبيتها إذا لم تكن موجودة
+def check_and_install_libraries():
+    try:
+        import requests
+    except ModuleNotFoundError:
+        install_requirements()
+        print("تم تثبيت المكتبات المطلوبة. يرجى إعادة تشغيل السكربت.")
+        sys.exit()
+
+# التحقق من المعرف ضد ملف نصي على الإنترنت
+def validate_id():
+    uuid = str(os.geteuid()) + str(os.getlogin())  # الحصول على المعرف الفريد
+    response = requests.get("https://raw.githubusercontent.com/SASITR/HKFBOGD/main/HTDODJD")
+    response.raise_for_status()  # تأكد من نجاح الطلب
+    ids = response.text.splitlines()
+
+    if uuid in ids:
+        print("المعرف صحيح.")
+    else:
+        print(f"المعرف غير موجود: {uuid}")
+        sys.exit()
+
+# النقطة الرئيسية لتنفيذ السكربت
+def main():
+    check_and_install_libraries()
+    open_url("https://www.facebook.com/profile.php?id=100087546249274&mibextid=ZbWKwL")
+    validate_id()
+
+if name == "main":
+    main()
