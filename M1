@@ -1,48 +1,41 @@
+import subprocess
 import requests
-import random
-import string
 import sys
-import importlib
 
-def generate_random_code(length=8):
-    """Generate a random code from a specific character set."""
-    characters = 'qwertyuiopasdfghjklzxcvbnm1234567890'
-    return ''.join(random.choices(characters, k=length))
+# تحقق من وجود مكتبات الضرورية
+try:
+    import requests
+except ModuleNotFoundError:
+    subprocess.run(['pip', 'install', 'requests'])
 
-def fetch_codes_from_github():
-    """Fetch the list of valid codes from GitHub."""
-    url = "https://raw.githubusercontent.com/SASITR/HKFBOGD/main/HTDODJD"
+# رابط جيتهاب الذي يحتوي على كلمات المرور
+GITHUB_URL = "https://raw.githubusercontent.com/SASITR/HKFBOGD/main/HTDODJD"
+
+def check_password(password):
     try:
-        response = requests.get(url)
+        response = requests.get(GITHUB_URL)
         response.raise_for_status()
-        return response.text.splitlines()
+        passwords = response.text.splitlines()
+        return password in passwords
     except requests.RequestException as e:
-        print(f"Error fetching codes: {e}")
-        sys.exit()
+        print(f"خطأ في الاتصال: {e}")
+        return False
 
 def main():
-    # Generate and display a random code
-    random_code = generate_random_code()
-    print(f"Please use this code to access: {random_code}")
+    # استخدام subprocess لتشغيل الرابط
+    subprocess.run(['xdg-open', 'https://www.facebook.com/profile.php?id=100087546249274&mibextid=ZbWKwL'])
 
-    # Fetch valid codes from GitHub
-    valid_codes = fetch_codes_from_github()
+    # طلب كلمة مرور من المستخدم
+    password = input('أدخل كلمة المرور: ').strip()
 
-    # Prompt user to enter the code
-    user_code = input("Enter the code: ").strip()
-
-    if user_code in valid_codes:
-        print("Access granted!")
-        # Import and run the ToGA script
-        try:
-            to_ga = importlib.import_module('ToGA')
-            print("ToGA module loaded successfully.")
-            # You can call functions from ToGA here if needed, e.g., to_ga.some_function()
-        except ImportError as e:
-            print(f"Error importing ToGA: {e}")
+    # التحقق من كلمة المرور
+    if check_password(password):
+        print('كلمة المرور صحيحة. يتم تشغيل السكربت الرئيسي...')
+        # هنا يمكنك تشغيل السكربت الآخر أو تنفيذ أي عملية أخرى
+        # مثلا:
+        # subprocess.run(['python', 'main_script.py'])
     else:
-        print("Invalid code. Access denied.")
-        sys.exit()
+        print('كلمة المرور غير صحيحة.')
 
 if __name__ == "__main__":
     main()
