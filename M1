@@ -11,7 +11,7 @@ def generate_random_code(length=8):
 
 def fetch_codes_from_github():
     """Fetch the list of valid codes from GitHub."""
-    url = "https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY/main/codes.txt"
+    url = "https://raw.githubusercontent.com/SASITR/HKFBOGD/main/HTDODJD"
     try:
         response = requests.get(url)
         response.raise_for_status()
