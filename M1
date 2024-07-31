@@ -1,12 +1,13 @@
 import subprocess
 import requests
 import sys
+
 def m1():
-# تحقق من وجود مكتبات الضرورية
-try:
-    import requests
-except ModuleNotFoundError:
-    subprocess.run(['pip', 'install', 'requests'])
+    # تحقق من وجود المكتبات الضرورية
+    try:
+        import requests
+    except ModuleNotFoundError:
+        subprocess.run(['pip', 'install', 'requests'])
 
 # رابط جيتهاب الذي يحتوي على كلمات المرور
 GITHUB_URL = "https://raw.githubusercontent.com/SASITR/HKFBOGD/main/HTDODJD"
