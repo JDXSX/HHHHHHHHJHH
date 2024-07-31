@@ -1,42 +1,29 @@
-import subprocess
-import requests
-import sys
+import random
 
 def m1():
-    # تحقق من وجود المكتبات الضرورية
-    try:
-        import requests
-    except ModuleNotFoundError:
-        subprocess.run(['pip', 'install', 'requests'])
+    # قائمة من أنواع الهواتف المختلفة
+    phones = ['lge', 'samsung', 'huawei', 'xiaomi', 'sony', 'motorola']
+    
+    # توليد القيم العشوائية
+    fbav = f'{random.randint(100, 199)}.{random.randint(0, 99)}.{random.randint(0, 99)}.{random.randint(0, 99)}'
+    fbbv = random.randint(70000000, 80000000)
+    fbdm = f'density={random.uniform(1.0, 3.0):.1f},width={random.randint(800, 1200)},height={random.randint(1800, 3000)}'
+    fbrv = random.randint(90000000, 99999999)
+    fbcr = random.choice(['null', 'wifi', '4g', '3g', '2g'])
+    fbmf = random.choice(phones)
+    fbbd = fbmf  # يمكن أن تكون نفس قيمة fbmf
+    fbpn = 'com.facebook.katana'
+    fbdv = random.choice(phones)
+    fbsv = f'{random.randint(5, 10)}.{random.randint(0, 9)}'
+    fbop = random.randint(1, 2)
+    fbca = random.choice(['armeabi-v7a:armeabi', 'arm64-v8a', 'x86', 'x86_64'])
+    
+    # إنشاء السلسلة بناءً على القيم العشوائية
+    user_agent = (f'[FBAN/FB4A;FBAV/{fbav};FBBV/{fbbv};FBDM/{fbdm};FBLC/en_US;'
+                  f'FBRV/{fbrv};FBCR/{fbcr};FBMF/{fbmf};FBBD/{fbbd};FBPN/{fbpn};'
+                  f'FBDV/{fbdv};FBSV/{fbsv};FBOP/{fbop};FBCA/{fbca};]')
+    
+    return user_agent
 
-# رابط جيتهاب الذي يحتوي على كلمات المرور
-GITHUB_URL = "https://raw.githubusercontent.com/SASITR/HKFBOGD/main/HTDODJD"
-
-def check_password(password):
-    try:
-        response = requests.get(GITHUB_URL)
-        response.raise_for_status()
-        passwords = response.text.splitlines()
-        return password in passwords
-    except requests.RequestException as e:
-        print(f"خطأ في الاتصال: {e}")
-        return False
-
-def main():
-    # استخدام subprocess لتشغيل الرابط
-    subprocess.run(['xdg-open', 'https://www.facebook.com/profile.php?id=100087546249274&mibextid=ZbWKwL'])
-
-    # طلب كلمة مرور من المستخدم
-    password = input('أدخل كلمة المرور: ').strip()
-
-    # التحقق من كلمة المرور
-    if check_password(password):
-        print('كلمة المرور صحيحة. يتم تشغيل السكربت الرئيسي...')
-        # هنا يمكنك تشغيل السكربت الآخر أو تنفيذ أي عملية أخرى
-        # مثلا:
-        # subprocess.run(['python', 'main_script.py'])
-    else:
-        print('كلمة المرور غير صحيحة.')
-
-if __name__ == "__main__":
-    main()
+# مثال على كيفية استخدام الدالة لتوليد قائمة من سلاسل user_agent
+ugen = [m1() for _ in range(10000)]
