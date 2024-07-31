@@ -1,37 +1,41 @@
 import os
-import sys
 import requests
+import random
+import string
+import sys
 
-# فتح رابط في المتصفح
-def open_url(url):
-    os.system(f'xdg-open {url}')  # يستخدم على نظام لينكس/أندرويد. استخدم 'start {url}' على نظام ويندوز.
+def generate_random_code(length=8):
+    """Generate a random code from a specific character set."""
+    characters = 'qwertyuiopasdfghjklzxcvbnm1234567890'
+    return ''.join(random.choices(characters, k=length))
 
-# التحقق من وجود مكتبات معينة وتثبيتها إذا لم تكن موجودة
-def check_and_install_libraries():
+def fetch_codes_from_github():
+    """Fetch the list of valid codes from GitHub."""
+    url = "https://raw.githubusercontent.com/SASITR/HKFBOGD/main/HTDODJD"
     try:
-        import requests
-    except ModuleNotFoundError:
-        print("مكتبة 'requests' غير مثبتة. يرجى تثبيتها عبر الأمر: pip install requests")
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.text.splitlines()
+    except requests.RequestException as e:
+        print(f"Error fetching codes: {e}")
         sys.exit()
 
-# التحقق من المعرف ضد ملف نصي على الإنترنت
-def validate_id():
-    uuid = str(os.geteuid()) + str(os.getlogin())  # الحصول على المعرف الفريد
-    response = requests.get("https://raw.githubusercontent.com/SASITR/HKFBOGD/main/HTDODJD")
-    response.raise_for_status()  # تأكد من نجاح الطلب
-    ids = response.text.splitlines()
-
-    if uuid in ids:
-        print("المعرف صحيح.")
-    else:
-        print(f"المعرف غير موجود: {uuid}")
-        sys.exit()
-
-# النقطة الرئيسية لتنفيذ السكربت
 def main():
-    check_and_install_libraries()
-    open_url("https://www.facebook.com/profile.php?id=100087546249274&mibextid=ZbWKwL")
-    validate_id()
+    # Generate and display a random code
+    random_code = generate_random_code()
+    print(f"Please use this code to access: {random_code}")
 
-if __name__ == "__main__":
+    # Fetch valid codes from GitHub
+    valid_codes = fetch_codes_from_github()
+
+    # Prompt user to enter the code
+    user_code = input("Enter the code: ").strip()
+
+    if user_code in valid_codes:
+        print("Access granted!")
+    else:
+        print("Invalid code. Access denied.")
+        sys.exit()
+
+if name == "main":
     main()
