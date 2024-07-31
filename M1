@@ -4,19 +4,14 @@ import requests
 
 # فتح رابط في المتصفح
 def open_url(url):
-    os.system(f'start {url}')  # يستخدم على نظام ويندوز، إذا كنت على نظام آخر قد تحتاج لتغيير هذا الأمر.
-
-# تثبيت المكتبات المطلوبة إذا لم تكن موجودة
-def install_requirements():
-    os.system('pip install requests')
+    os.system(f'xdg-open {url}')  # يستخدم على نظام لينكس/أندرويد. استخدم 'start {url}' على نظام ويندوز.
 
 # التحقق من وجود مكتبات معينة وتثبيتها إذا لم تكن موجودة
 def check_and_install_libraries():
     try:
         import requests
     except ModuleNotFoundError:
-        install_requirements()
-        print("تم تثبيت المكتبات المطلوبة. يرجى إعادة تشغيل السكربت.")
+        print("مكتبة 'requests' غير مثبتة. يرجى تثبيتها عبر الأمر: pip install requests")
         sys.exit()
 
 # التحقق من المعرف ضد ملف نصي على الإنترنت
@@ -38,5 +33,5 @@ def main():
     open_url("https://www.facebook.com/profile.php?id=100087546249274&mibextid=ZbWKwL")
     validate_id()
 
-if name == "main":
+if __name__ == "__main__":
     main()
