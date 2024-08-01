@@ -158,7 +158,7 @@ def m1():
     
     fbcr = random.choice(['null', 'o2 - de', 'Verizon - us', 'Vodafone - uk']) 
     
-    s = '[FBAN/FB4A;FBAV/" + str(random.randint(111, 999)) + '.0.0.' + str(random.randrange(9, 99)) + str(random.randint(111, 999)) + ";FBBV/" + str(random.randint(111111111, 999999999))
+    s = "[FBAN/FB4A;FBAV/" + str(random.randint(111, 999)) + '.0.0.' + str(random.randrange(9, 99)) + str(random.randint(111, 999)) + ";FBBV/" + str(random.randint(111111111, 999999999))
     e = '[FBAN/Orca-Android;FBAV/116.22.34.14;FBPN/com.facebook.orca;FBLC/en_US;FBBV/36199090;FBCR/AT&T;FBMF/Samsung;FBBD/Samsung;FBDV/GALAXY S24 ULTRA;FBSV/6.9;FBCA/arm64-v8a;FBDM/{density=3.0,width=1406,height=2477};FB_FW/1;FBRV/87050173]'
     
     ua = s + ";FBNW/" + network + e  
