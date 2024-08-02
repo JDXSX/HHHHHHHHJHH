@@ -1,19 +1,15 @@
-def m1():
-    en = random.choice(['en_US', 'en_GB', 'en_PK', 'ru_RU', 'de_DE', 'en_BD', 'en_IN', 'en_AF'])
-    application_version = str(random.randint(111, 444)) + '.0.0.' + str(random.randrange(9, 49)) + '.' + str(random.randint(11, 33))
-    ver = str(random.randrange(30, 443))
-    app_version = str(random.randint(111, 444)) + '.0.0.' + str(random.randrange(9, 49)) + '.' + str(random.randint(11, 33))
-    app_ver_code = str(random.randint(000000000, 999999999))
-    application_version_code = str(random.randint(111111111, 999999999))
-    fbap = random.choice(['414.0.0.30.113', '398.0.0.21.105', '274.0.0.22.117', '316.4.0.15.120', '385.0.0.32.114', '415.0.0.34.107', '414.0.0.30.113', '357.0.0.13.112', '415.0.0.34.107', '408.1.0.16.113', '412.0.0.22.115', '240.0.0.38.121', '414.0.0.30.113', '241.0.0.43.15'])
-    
-    network_types = ['4G', '3G', 'LTT', 'Wi-Fi']
-    network = random.choice(network_types)
-    
-    fbcr = random.choice(['null', 'o2 - de', 'Verizon - us', 'Vodafone - uk']) 
-    
-    s = "[FBAN/FB4A;FBAV/" + str(random.randint(111, 999)) + '.0.0.' + str(random.randrange(9, 99)) + str(random.randint(111, 999)) + ";FBBV/" + str(random.randint(111111111, 999999999))
-    e = '[FBAN/FB4A;FBAV/391.0.0.76463;FBBV/395944685;FBNW/4G[FBAN/Orca-Android;FBAV/112.61.23.49;FBPN/com.facebook.orca;FBLC/en_US;FBBV/21542560;FBCR/AT&T;FBMF/Qmobile;FBBD/Qmobile;FBDV/GALAXY S24 ULTRA;FBSV/7.7;FBCA/arm64-v8a;FBDM/{density=2.3,width=918,height=1430};FB_FW/1;FBRV/35866188]'
-    
-    ua = s + ";FBNW/" + network + e  
-    return ua
+import os
+import sys
+import time
+
+def m1():   
+    print("ﺡﺰﻣﺍ ﺎﻧﺍ")
+
+JIHAD = " ﺡﺎﺠﻧ ﻲﺑ ﻚﻗﺍﺮﺘﺧﺍ ﻢﺗ"
+JIHAD = " HHHHH" 
+
+for letter in JIHAD:
+    time.sleep(0.10)
+    sys.stdout.write(letter + JIHAD) # Concatenate letters from zeyad with JIHAD
+    sys.stdout.flush()
+m1()
