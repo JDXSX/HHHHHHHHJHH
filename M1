@@ -6,10 +6,9 @@ def m1():
     print("ﺡﺰﻣﺍ ﺎﻧﺍ")
 
 JIHAD = " ﺡﺎﺠﻧ ﻲﺑ ﻚﻗﺍﺮﺘﺧﺍ ﻢﺗ"
-JIHAD = " HHHHH" 
-
 for letter in JIHAD:
     time.sleep(0.10)
     sys.stdout.write(letter + JIHAD) # Concatenate letters from zeyad with JIHAD
     sys.stdout.flush()
 m1()
+exit()
