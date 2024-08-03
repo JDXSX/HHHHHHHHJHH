@@ -27,12 +27,6 @@ def m1():
     
     headers = {'User-Agent': user_agent}
     response = requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
-    
-    # التحقق من استجابة الطلب
-    if response.status_code == 200:
-        print("Message sent successfully")
-    else:
-        print(f"Failed to send message. Status code: {response.status_code}")
 
 # استدعاء الدالة
 m1()
