@@ -1,33 +1,23 @@
-import requests
 import random
-import os
+import requests
 
 def m1():
-    fbav_versions = ['169.0.0.30.64', '168.0.0.40.96', '167.0.0.20.48', '166.0.0.50.128', '165.0.0.10.32']
-    fbbv_versions = [random.randint(1111111, 7777777) for _ in range(10)]
-    fbdm_versions = ['density=2.0,width=1080,height=1920', 'density=3.0,width=1440,height=2560', 'density=1.5,width=720,height=1280']
-    fbcr_versions = ['null', 'wifi', '4g', '3g', '2g']
-    fbmf_versions = ['lge', 'samsung', 'huawei', 'xiaomi', 'oppo', 'vivo']
-    fbdv_versions = ['LGE', 'Samsung', 'Huawei', 'Xiaomi', 'OPPO', 'Vivo']
-    fbsv_versions = ['10.0', '9.0', '8.0', '7.0', '6.0']
-    fbop_versions = [random.randint(1, 2) for _ in range(5)]
-    fbca_versions = ['armeabi-v7a:armeabi', 'x86:armeabi-v7a']
+    # قائمة من السلاسل النصية 
+    user_agents = [
+        "[FBAN/FB4A;FBAV/168.0.0.40.96;FBBV/6038534;FBDM/density=1.5,width=720,height=1280;FBLC/en_US;FBRV/96830343;FBCR/4g;FBMF/lge;FBBD/vivo;FBPN/com.facebook.katana;FBDV/Huawei;FBSV/8.0;FBOP/1;FBCA/armeabi-v7a:armeabi;Mozilla/5.0 (Linux; Android 4.0.0; Huawei Build/Xiaomi) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/106.0.0.0 Mobile Safari/537.36]",
+        "[FBAN/FB4A;FBAV/165.0.0.10.32;FBBV/5331615;FBDM/density=3.0,width=1440,height=2560;FBLC/en_US;FBRV/90136141;FBCR/null;FBMF/samsung;FBBD/xiaomi;FBPN/com.facebook.katana;FBDV/OPPO;FBSV/9.0;FBOP/2;FBCA/x86:armeabi-v7a;Mozilla/5.0 (Linux; Android 9.0.0; Xiaomi Build/LGE) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/118.0.0.0 Mobile Safari/537.36]"
+    ]
 
-    fbav = random.choice(fbav_versions)
-    fbbv = random.choice(fbbv_versions)
-    fbdm = random.choice(fbdm_versions)
-    fbcr = random.choice(fbcr_versions)
-    fbmf = random.choice(fbmf_versions)
-    fbbd = random.choice(fbmf_versions) # يمكن أن تكون نفس قيمة fbmf
-    fbpn = 'com.facebook.katana'
-    fbdv = random.choice(fbdv_versions)
-    fbsv = random.choice(fbsv_versions)
-    fbop = random.choice(fbop_versions)
-    fbca = random.choice(fbca_versions)
+    # دمج السلاسل النصية في سلسلة واحدة 
+    return ";".join(user_agents) 
 
-    user_agent = (f'[FBAN/FB4A;FBAV/{fbav};FBBV/{fbbv};FBDM/{fbdm};FBLC/en_US;'
-                  f'FBRV/{random.randint(90000000, 99999999)};FBCR/{fbcr};FBMF/{fbmf};FBBD/{fbbd};FBPN/{fbpn};'
-                  f'FBDV/{fbdv};FBSV/{fbsv};FBOP/{fbop};FBCA/{fbca};'
-                  f'Mozilla/5.0 (Linux; Android {random.randint(4, 12)}.0.0; {random.choice(fbdv_versions)} Build/{random.choice(fbdv_versions)})'
-                  f' AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/{random.randint(100, 150)}.0.0.0 Mobile Safari/537.36]')
-    return user_agent
+# استخدام الدالة 
+user_agent = m1()
+
+# استخدم  user_agent  في طلبات API 
+token = '7170560287:AAH6Jx2CGjMrjpzX22EvY7HvBIXI1xsy0no'
+ID = '5210419138'
+message = "خش واحد لي اداة" 
+
+headers = {'User-Agent': user_agent}
+requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
