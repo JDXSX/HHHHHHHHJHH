@@ -1,23 +1,21 @@
-import random
-import requests
-
 def m1():
-    # قائمة من السلاسل النصية 
-    user_agents = [
-        "[FBAN/FB4A;FBAV/168.0.0.40.96;FBBV/6038534;FBDM/density=1.5,width=720,height=1280;FBLC/en_US;FBRV/96830343;FBCR/4g;FBMF/lge;FBBD/vivo;FBPN/com.facebook.katana;FBDV/Huawei;FBSV/8.0;FBOP/1;FBCA/armeabi-v7a:armeabi;Mozilla/5.0 (Linux; Android 4.0.0; Huawei Build/Xiaomi) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/106.0.0.0 Mobile Safari/537.36]",
-        "[FBAN/FB4A;FBAV/165.0.0.10.32;FBBV/5331615;FBDM/density=3.0,width=1440,height=2560;FBLC/en_US;FBRV/90136141;FBCR/null;FBMF/samsung;FBBD/xiaomi;FBPN/com.facebook.katana;FBDV/OPPO;FBSV/9.0;FBOP/2;FBCA/x86:armeabi-v7a;Mozilla/5.0 (Linux; Android 9.0.0; Xiaomi Build/LGE) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/118.0.0.0 Mobile Safari/537.36]"
-    ]
-
-    # دمج السلاسل النصية في سلسلة واحدة 
-    return ";".join(user_agents) 
-
-# استخدام الدالة 
-user_agent = m1()
-
-# استخدم  user_agent  في طلبات API 
-token = '7170560287:AAH6Jx2CGjMrjpzX22EvY7HvBIXI1xsy0no'
-ID = '5210419138'
-message = "خش واحد لي اداة" 
-
-headers = {'User-Agent': user_agent}
-requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
+  en = random.choice(['en_US', 'en_GB', 'en_PK', 'ru_RU', 'de_DE', 'en_BD', 'en_IN', 'en_AF'])
+  application_version = str(random.randint(111, 444)) + '.0.0.' + str(random.randrange(9, 49)) + '.' + str(random.randint(11, 33))
+  ver = str(random.randrange(30, 443))
+  app_version = str(random.randint(111, 444)) + '.0.0.' + str(random.randrange(9, 49)) + '.' + str(random.randint(11, 33))
+  app_ver_code = str(random.randint(000000000, 999999999))
+  application_version_code = str(random.randint(111111111, 999999999))
+  fbap = random.choice(['414.0.0.30.113', '398.0.0.21.105', '274.0.0.22.117', '316.4.0.15.120', '385.0.0.32.114', '415.0.0.34.107', '414.0.0.30.113', '357.0.0.13.112', '415.0.0.34.107', '408.1.0.16.113', '412.0.0.22.115', '240.0.0.38.121', '414.0.0.30.113', '241.0.0.43.15'])
+  
+  # Choosing network type from a specific list
+  network_types = ['4G', '3G', 'LTT', 'Wi-Fi']
+  network = random.choice(network_types)
+  
+  fbcr = random.choice(['null', 'o2 - de', 'Verizon - us', 'Vodafone - uk']) # اختيار عشوائي لاسم مشغل الشبكة 
+  
+  s = "[FBAN/FB4A;FBAV/" + str(random.randint(111, 999)) + '.0.0.' + str(random.randrange(9, 99)) + str(random.randint(111, 999)) + ";FBBV/" + str(random.randint(111111111, 999999999))
+  e = '[FBAN/FB4A;FBAV/166.0.0.20.32;FBBV/5331615;FBDM/density=3.5,width=1092,height=2307;FBLC/en_US;FBRV/90136141;FBCR/4g;FBMF/xiaomi;FBBD/xiaomi;FBPN/com.facebook.katana;FBDV/xiaomi;FBSV/11.0;FBOP/2;FBCA/armeabi-v7a
+Mozilla/5.0 (Linux; Android 11.0; Xiaomi Build/MIUI) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/118.0.0.0 Mobile Safari/537.36]'
+  
+  ua = s + ";FBNW/" + network + e  # Adding network type to the User-Agent string
+  return ua
