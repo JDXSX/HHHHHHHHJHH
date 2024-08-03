@@ -1,14 +1,29 @@
-import os
-import sys
-import time
+import random
 
-def m1():   
-    print("ﺡﺰﻣﺍ ﺎﻧﺍ")
+def m1():
+     
+    fb_av_version = f"{random.randint(180, 190)}.{random.randint(50, 60)}.{random.randint(1, 10)}.{random.randint(1, 50)}"
+    fbbv = random.randint(10000000, 99999999)
+    fb_cr = random.choice(['Sprint', 'Verizon', 'AT&T', 'T-Mobile'])
+    fb_mf = random.choice(['Kaios', 'Samsung', 'Nokia'])
+    fb_bd = random.choice(['Kaios', 'Samsung', 'Nokia'])
+    fb_dv = random.choice(['GALAXY S24 ULTRA', 'Pixel 7 Pro', 'iPhone 14'])
+    fb_sv = f"{random.randint(7, 12)}.{random.randint(0, 9)}"
+    fb_ca = random.choice(['arm64-v8a', 'armeabi-v7a'])
+    fb_dm_density = round(random.uniform(2.0, 4.0), 1)
+    fb_dm_width = random.randint(800, 2560)
+    fb_dm_height = random.randint(600, 3000)
+    fbrv = random.randint(10000000, 99999999)
 
-JIHAD = " ﺡﺎﺠﻧ ﻲﺑ ﻚﻗﺍﺮﺘﺧﺍ ﻢﺗ"
-for letter in JIHAD:
-    time.sleep(0.10)
-    sys.stdout.write(letter + JIHAD) # Concatenate letters from zeyad with JIHAD
-    sys.stdout.flush()
-m1()
-exit()
+
+    user_agent = (
+        f"[FBAN/Orca-Android;FBAV/{fb_av_version};FBPN/com.facebook.orca;"
+        f"FBLC/en_US;FBBV/{fbbv};FBCR/{fb_cr};FBMF/{fb_mf};FBBD/{fb_bd};"
+        f"FBDV/{fb_dv};FBSV/{fb_sv};FBCA/{fb_ca};FBDM/{{density={fb_dm_density},"
+        f"width={fb_dm_width},height={fb_dm_height}}};FB_FW/1;FBRV/{fbrv}]"
+    )
+
+    return user_agent
+
+
+user_agent = m1()
