@@ -1,3 +1,4 @@
+import random
 def m1():
 	version=str(random.randint(5,14))
 	code=str(random.randint(40,450))
