@@ -1,14 +1,5 @@
-import random
-numbers = [
-    " لايوجد,"
-    " صيد,"
-    " الاداة,"
-    " مدفوعة,"
-]
-
-
-random_number = random.choice(numbers)
-
-
-print(random_number)
+name = input("ﻮﻠﺤﻳ ﻚﻤﺳﺍ ﻮﻨﺷ?   \n")
+user_name = (name)
+if name == user_name:
+  print("Hello " + name)
 sys.exit()
