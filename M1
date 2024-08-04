@@ -1,19 +1,13 @@
 import random
-def m1():
-	version=str(random.randint(5,14))
-	code=str(random.randint(40,450))
-	wid=str(random.randint(720,1280))
-	heigh=str(random.randint(1280,2400))
-	veer=str(random.randint(111111111,999999999))
-	models=random.choice(["SM-P610N", "SM-P615", "SM-P610"])
-	model2=random.choice(["RMX3740", "RMX3741"])
-	model3=random.choice(["220333QAG", "220333QBI", "220333QNY", "220333QL"])
-	model4=random.choice(["ASUS_Z017DB", "ASUS_Z017D", "ASUS_Z017DA", "ASUS_Z017DC", "ASUS_ZE520KL", "ASUS_ZA520KL"])
-	facebook=random.choice(["com.facebook.adsmanager|MobileAdsManagerAndroid","com.facebook.katana|FB4A","com.facebook.orca|Orca-Android","com.facebook.mlite|MessengerLite"])
-	face=facebook.split("|") [1]
-	face2=facebook.split("|") [0]
-	ua1=f"[FBAN/"+face+";FBAV/"+str(random.randint(11,99))+".0.0."+str(random.randint(1111,9999))+";FBBV/"+str(random.randint(1111111,9999999))+";[FBAN/"+face+";FBAV/"+code+".0.0.22.104;FBPN/"+face2+";FBLC/id_ID;FBBV/"+veer+";FBCR/Vodafone India;FBMF/samsung;FBBD/samsung;FBDV/"+models+";FBSV/11.8.5;FBCA/armeabi-v7a:armeabi;FBDM/{density="+str(random.randint(1,3))+".25,width="+wid+",height="+heigh+"};FB_FW/1;]"
-	ua2=f"[FBAN/"+face+";FBAV/"+str(random.randint(11,99))+".0.0."+str(random.randint(1111,9999))+";FBBV/"+str(random.randint(1111111,9999999))+";[FBAN/"+face+";FBAV/"+code+".0.0.28.111;FBPN/"+face2+";FBLC/en_US;FBBV/"+veer+";FBCR/Cricket;FBMF/Realme;FBBD/Realme;FBDV/"+model2+";FBSV/13;FBCA/armeabi-v7a:armeabi;FBDM/{density="+str(random.randint(2,4))+".75,width="+wid+",height="+heigh+"};FB_FW/1;]"
-	ua3=f"[FBAN/"+face+";FBAV/"+str(random.randint(11,99))+".0.0."+str(random.randint(1111,9999))+";FBBV/"+str(random.randint(1111111,9999999))+";[FBAN/"+face+";FBAV/"+code+".0.0.12.120;FBPN/"+face2+";FBLC/en_GB;FBBV/"+veer+";FBCR/Robi;FBMF/Xiaomi;FBBD/Redmi;FBDV/"+model3+";FBSV/12;FBCA/armeabi-v7a:armeabi;FBDM/{density="+str(random.randint(1,4))+".625,width="+wid+",height="+heigh+"};FB_FW/1;]"
-	ua4=f"[FBAN/"+face+";FBAV/"+str(random.randint(11,99))+".0.0."+str(random.randint(1111,9999))+";FBBV/"+str(random.randint(1111111,9999999))+";[FBAN/"+face+";FBAV/"+code+".0.0.32.114;FBPN/"+face2+";FBLC/it_IT;FBBV/"+veer+";FBCR/Airtel;FBMF/Asus;FBBD/Asus;FBDV/"+model4+";FBSV/7.0.1;FBCA/armeabi-v7a:armeabi;FBDM/{density="+str(random.randint(1,3))+".0,width="+wid+",height="+heigh+"};FB_FW/1;]"
-	return random.choice([ua1,ua2,ua3,ua4])
+numbers = [
+    " لايوجد,"
+    " صيد,"
+    " الاداة,"
+    " مدفوعة,"
+]
+
+
+random_number = random.choice(numbers)
+
+
+print(random_number)
