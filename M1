@@ -1,2 +1,28 @@
-print(NO)
-sys.exit()
+import requests
+import random
+
+def m1():
+    user_agents = [
+        "[FBAN/FB4A;FBAV/393.50.12.54;FBBV/954242441;FBDM/{density=3.5,width=1440,height=2560};FBLC/en_US;FBRV/489037986;FBCR/Orange;FBMF/Realme;FBBD/Realme;FBPN/com.facebook.katana;FBDV/Realme;FBSV/9.6;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
+        "[FBAN/FB4A;FBAV/271.62.87.78;FBBV/159899496;FBDM/{density=3.5,width=1080,height=1920};FBLC/en_US;FBRV/835549788;FBCR/Vodafone;FBMF/Motorola;FBBD/Motorola;FBPN/com.facebook.katana;FBDV/Motorola;FBSV/8.6;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
+        "[FBAN/FB4A;FBAV/388.20.52.2;FBBV/763440703;FBDM/{density=3.5,width=1080,height=1920};FBLC/en_US;FBRV/493182850;FBCR/AT&T;FBMF/Xiaomi;FBBD/Xiaomi;FBPN/com.facebook.katana;FBDV/Xiaomi;FBSV/12.9;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
+        "[FBAN/FB4A;FBAV/250.1.23.27;FBBV/835717293;FBDM/{density=3.0,width=1440,height=2560};FBLC/en_US;FBRV/281591890;FBCR/Verizon;FBMF/Xiaomi;FBBD/Xiaomi;FBPN/com.facebook.katana;FBDV/Xiaomi;FBSV/12.5;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
+    ]
+
+    return random.choice(user_agents)
+
+
+url = 'https://www.facebook.com/login'
+headers = {'User-Agent': m1()} 
+
+response = requests.get(url, headers=headers)
+password = "zxz"  # كلمة السر الصحيحة
+
+while True:
+  user_password = input("أدخل كلمة السر: ")  # طلب كلمة السر من المستخدم
+
+  if user_password == password:
+    print("تم تسجيل الدخول بنجاح!")
+    break  # الخروج من الحلقة إذا كانت كلمة السر صحيحة
+  else:
+    print("كلمة السر خاطئة. حاول مرة أخرى.")
