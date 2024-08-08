@@ -1,2 +1,2 @@
 print(NO)
-exit()
+sys.exit()
