@@ -6,7 +6,7 @@ password = "xxx"
 # عدد المحاولات المسموح بها قبل الحظر
 max_attempts = 3
 # مدة الحظر بالثواني
-ban_duration = 60
+ban_duration = 2
 
 # عدد المحاولات الحالية
 attempts = 0
