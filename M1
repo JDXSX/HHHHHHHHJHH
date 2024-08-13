@@ -1,1 +1,29 @@
-sys eixt()
+import time
+
+# كلمة السر الصحيحة
+password = "xxx"
+
+# عدد المحاولات المسموح بها قبل الحظر
+max_attempts = 3
+# مدة الحظر بالثواني
+ban_duration = 60
+
+# عدد المحاولات الحالية
+attempts = 0
+
+while True:
+    # طلب كلمة السر من المستخدم
+    user_password = input("أدخل كلمة السر: ")
+
+    if user_password == password:
+        print("تم تسجيل الدخول بنجاح!")
+        break  # الخروج من الحلقة إذا كانت كلمة السر صحيحة
+    else:
+        # زيادة عدد المحاولات
+        attempts += 1
+        if attempts >= max_attempts:
+            print(f"تم حظرك لمدة {ban_duration} ثانية بسبب إدخال كلمة سر خاطئة ثلاث مرات.")
+            time.sleep(ban_duration)  # حظر المستخدم لمدة دقيقة
+            attempts = 0  # إعادة تعيين عدد المحاولات بعد انتهاء الحظر
+        else:
+            print(f"كلمة السر خاطئة. حاول مرة أخرى. لديك {max_attempts - attempts} محاولات متبقية.")
