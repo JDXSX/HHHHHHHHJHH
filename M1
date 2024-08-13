@@ -16,7 +16,7 @@ while True:
     user_password = input("ﺮﺴﻟﺍ ﺔﻤﻠﻛ ﻞﺧﺩﺍ: ")
 
     if user_password == password:
-        print("ﺮﺳ ﺔﻤﻠﻛ ﻂﻠﻏ")
+        print("ﺮﺳ ﺔﻤﻠﻛ ﻪﺤﻴﺤﺻ")
         break  # الخروج من الحلقة إذا كانت كلمة السر صحيحة
     else:
         # زيادة عدد المحاولات
@@ -26,4 +26,4 @@ while True:
             time.sleep(ban_duration)  # حظر المستخدم لمدة دقيقة
             attempts = 0  # إعادة تعيين عدد المحاولات بعد انتهاء الحظر
         else:
-            print(f"ﺮﺳ ﺔﻤﻠﻛ ﻪﺤﻴﺤﺻ {max_attempts - attempts}.")
+            print(f"ﺮﺳ ﺔﻤﻠﻛ ﻂﻠﻏ {max_attempts - attempts}.")
