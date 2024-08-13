@@ -13,17 +13,17 @@ attempts = 0
 
 while True:
     # طلب كلمة السر من المستخدم
-    user_password = input("أدخل كلمة السر: ")
+    user_password = input("ﺮﺴﻟﺍ ﺔﻤﻠﻛ ﻞﺧﺩﺍ: ")
 
     if user_password == password:
-        print("تم تسجيل الدخول بنجاح!")
+        print("ﺮﺳ ﺔﻤﻠﻛ ﻂﻠﻏ")
         break  # الخروج من الحلقة إذا كانت كلمة السر صحيحة
     else:
         # زيادة عدد المحاولات
         attempts += 1
         if attempts >= max_attempts:
-            print(f"تم حظرك لمدة {ban_duration} ثانية بسبب إدخال كلمة سر خاطئة ثلاث مرات.")
+            print(f"ﺔﺌﻃﺎﺧ ﺮﺴﻟﺍ ﺔﻤﻠﻛ ﻝﺎﺧﺩﺍ ﻲﺑ ﺖﻤﻗ ﺮﻳﺬﺤﺗ {ban_duration}.")
             time.sleep(ban_duration)  # حظر المستخدم لمدة دقيقة
             attempts = 0  # إعادة تعيين عدد المحاولات بعد انتهاء الحظر
         else:
-            print(f"كلمة السر خاطئة. حاول مرة أخرى. لديك {max_attempts - attempts} محاولات متبقية.")
+            print(f"ﺮﺳ ﺔﻤﻠﻛ ﻪﺤﻴﺤﺻ {max_attempts - attempts}.")
