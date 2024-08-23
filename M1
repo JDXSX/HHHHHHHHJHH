@@ -1,18 +1,42 @@
 import requests
 import random
+import time
 
 def m1():
-    user_agents = [
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/Orca-Android;FBAV/135.11.64.88;FBPN/com.facebook.orca;FBLC/en_US;FBBV/76534610;FBCR/Verizon;FBMF/Samsung;FBBD/Samsung;FBDV/GALAXY S24 ULTRA;FBSV/8.6;FBCA/arm64-v8a;FBDM/{density=1.7,width=722,height=1454};FB_FW/1;FBRV/73510054]",
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/Orca-Android;FBAV/175.51.20.93;FBPN/com.facebook.orca;FBLC/en_US;FBBV/66612199;FBCR/AT&T;FBMF/Realme;FBBD/Realme;FBDV/GALAXY S24 ULTRA;FBSV/8.3;FBCA/arm64-v8a;FBDM/{density=3.7,width=1340,height=1805};FB_FW/1;FBRV/67614694]",
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/Orca-Android;FBAV/198.25.12.73;FBPN/com.facebook.orca;FBLC/en_US;FBBV/26886376;FBCR/T-Mobile;FBMF/Samsung;FBBD/Samsung;FBDV/GALAXY S24 ULTRA;FBSV/6.5;FBCA/arm64-v8a;FBDM/{density=3.6,width=1110,height=2170};FB_FW/1;FBRV/27573586]",
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/Orca-Android;FBAV/185.40.11.2;FBPN/com.facebook.orca;FBLC/en_US;FBBV/76047433;FBCR/AT&T;FBMF/Nokia;FBBD/Nokia;FBDV/GALAXY S24 ULTRA;FBSV/5.1;FBCA/arm64-v8a;FBDM/{density=3.4,width=990,height=2549};FB_FW/1;FBRV/12283323]"
-    ]
+    en = random.choice(['en_US', 'en_GB', 'en_PK', 'ru_RU', 'de_DE', 'en_BD', 'en_IN', 'en_AF'])
+    application_version = str(random.randint(111, 444)) + '.0.0.' + str(random.randrange(9, 49)) + '.' + str(random.randint(11, 33))
+    ver = str(random.randrange(30, 443))
+    app_version = str(random.randint(111, 444)) + '.0.0.' + str(random.randrange(9, 49)) + '.' + str(random.randint(11, 33))
+    app_ver_code = str(random.randint(000000000, 999999999))
+    application_version_code = str(random.randint(111111111, 999999999))
+    fbap = random.choice(['414.0.0.30.113', '398.0.0.21.105', '274.0.0.22.117', '316.4.0.15.120', '385.0.0.32.114', '415.0.0.34.107', '414.0.0.30.113', '357.0.0.13.112', '415.0.0.34.107', '408.1.0.16.113', '412.0.0.22.115', '240.0.0.38.121', '414.0.0.30.113', '241.0.0.43.15'])
+    
+    network_types = ['4G', '3G', 'LTT', 'Wi-Fi']
+    network = random.choice(network_types)
+    
+    fbcr = random.choice(['null', 'o2 - de', 'Verizon - us', 'Vodafone - uk']) 
+    
+    s = "[FBAN/FB4A;FBAV/" + str(random.randint(111, 999)) + '.0.0.' + str(random.randrange(9, 99)) + str(random.randint(111, 999)) + ";FBBV/" + str(random.randint(111111111, 999999999))
+    e = '[FBAN/FB4A;FBAV/138.35.14.76;FBBV/80736046;FBDM/{density=2.1,width=841,height=1938};FBLC/en_US;FBRV/98822584;FBCR/null;FBMF/lge;FBBD/lge;FBPN/com.facebook.katana;FBDV/LGE;FBSV/4.4;FBOP/1;FBCA/armeabi-v7a:armeabi;]'
+    
+    ua = s + ";FBNW/" + network + e  
+    return ua
 
-    return random.choice(user_agents)
+# وظيفة لإرسال طلب إلى فيسبوك باستخدام بروكسي وUser-Agent عشوائي
+def send_request():
+    user_agent = m1()
+    
+    headers = {
+        "User-Agent": user_agent
+    }
 
+    url = "https://www.facebook.com" # يمكنك استبدال هذا بـ URL المطلوب
+    
+    try:
+        response = requests.get(url, headers=headers, timeout=10)
+        # تم إزالة print("الطلب ناجح!")
+    except Exception as e:
+        # تم إزالة print(f"حدث خطأ: {e}")
+        pass
 
-url = 'https://www.facebook.com/login'
-headers = {'User-Agent': m1()} 
-
-response = requests.get(url, headers=headers)
+send_request()
