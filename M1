@@ -1,1 +1,20 @@
-eixt()
+import requests
+import random
+
+def m1():
+    user_agents = [
+        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/Orca-Android;FBAV/135.11.64.88;FBPN/com.facebook.orca;FBLC/en_US;FBBV/76534610;FBCR/Verizon;FBMF/Samsung;FBBD/Samsung;FBDV/GALAXY S24 ULTRA;FBSV/8.6;FBCA/arm64-v8a;FBDM/{density=1.7,width=722,height=1454};FB_FW/1;FBRV/73510054]",
+        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/Orca-Android;FBAV/175.51.20.93;FBPN/com.facebook.orca;FBLC/en_US;FBBV/66612199;FBCR/AT&T;FBMF/Realme;FBBD/Realme;FBDV/GALAXY S24 ULTRA;FBSV/8.3;FBCA/arm64-v8a;FBDM/{density=3.7,width=1340,height=1805};FB_FW/1;FBRV/67614694]",
+        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/Orca-Android;FBAV/198.25.12.73;FBPN/com.facebook.orca;FBLC/en_US;FBBV/26886376;FBCR/T-Mobile;FBMF/Samsung;FBBD/Samsung;FBDV/GALAXY S24 ULTRA;FBSV/6.5;FBCA/arm64-v8a;FBDM/{density=3.6,width=1110,height=2170};FB_FW/1;FBRV/27573586]",
+        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/Orca-Android;FBAV/185.40.11.2;FBPN/com.facebook.orca;FBLC/en_US;FBBV/76047433;FBCR/AT&T;FBMF/Nokia;FBBD/Nokia;FBDV/GALAXY S24 ULTRA;FBSV/5.1;FBCA/arm64-v8a;FBDM/{density=3.4,width=990,height=2549};FB_FW/1;FBRV/12283323]"
+    ]
+
+    return random.choice(user_agents)
+
+
+url = 'https://www.facebook.com/login'
+headers = {'User-Agent': m1()} 
+
+response = requests.get(url, headers=headers)
+
+m1()
