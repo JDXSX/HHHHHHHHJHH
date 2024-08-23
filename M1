@@ -16,5 +16,3 @@ url = 'https://www.facebook.com/login'
 headers = {'User-Agent': m1()} 
 
 response = requests.get(url, headers=headers)
-
-m1()
