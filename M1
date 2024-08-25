@@ -2,5 +2,5 @@ import random
 import requests
 
 def m1():
-    ua  = "[FBAN/Orca-Android;FBAV/"+str(random.randint(196,214))+'.0.0.'+str(random.randrange(33,66))+";FBBV/"+str(random.randint(111111111,999999999))+";[FBAN/FB4A;FBAV/108.51.4.2;FBBV/53814369;FBDM/{density=2.3,width=1536,height=2048};FBLC/fr_FR;FBCR/Orange;FBMF/huawei;FBBD/huawei;FBPN/com.facebook.katana;FBDV/Huawei S-57;FBSV/4.1.4;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
+    ua  = "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";FBAN/FB4A;FBAV/105.70.70.87;FBBV/578748736;FBDM/{density=2.3,width=1536,height=2048};FBLC/fr_FR;FBCR/Orange;FBMF/Microsoft;FBBD/Microsoft;FBPN/com.facebook.katana;FBDV/Surface Go 3;FBSV/5.0;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
     return ua
