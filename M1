@@ -2,22 +2,25 @@ import random
 import requests
 
 def m1():
-    # قائمة من السلاسل النصية 
-    user_agents = [
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/FB4A;FBAV/2.7.9;FBDM/{density=1.261,width=478,height=308};FBLC/en_US;FB_FW/1;FBCR/CLARO;FBPN/com.facebook.katana;FBSV/3.1;]",
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/FB4A;FBAV/2.2.5;FBDM/{density=1.428,width=436,height=310};FBLC/es_AR;FB_FW/3;FBCR/CLARO;FBPN/com.facebook.katana;FBSV/1.7;]"
-    ]
+    s = "[FBAN/FB4A;FBAV/" + str(random.randint(111, 999)) + '.0.0.' + str(random.randrange(9, 99)) + str(random.randint(111, 999)) + ";FBBV/" + str(random.randint(111111111, 999999999))
+    e = '[FBAN/FB4A;FBAV/50.5.1.3490;FBBV/68215891;FBDM/{density=2.208,width=797,height=1448};FBLC/en_US;FBRV/92316639;FBCR/null;FBMF/huawei;FBBD/samsung;FBPN/com.facebook.katana;FBDV/unknown;FBSV/6.8;FBOP/1;FBCA/arm64-v8a:]'
+    
+    ua = s + e  
+    return ua
 
-    # اختيار سلسلة نصية عشوائية 
-    return random.choice(user_agents)
+def send_request():
+    user_agent = m1()
+    
+    headers = {
+        "User-Agent": user_agent
+    }
 
-# استخدام الدالة 
-user_agent = m1()
+    url = "https://b-graph.facebook.com/auth/login?include_headers=false&decode_body_json=false&streamable_json_response=true"  
+    
+    try:
+        response = requests.get(url, headers=headers, timeout=10)
+    except requests.RequestException as e:
+        pass  # يمكن إضافة التعامل مع الأخطاء إذا لزم الأمر
 
-# استخدم  user_agent  في طلبات API 
-token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
-ID = '5210419138'
-message = "خش واحد لي اداة" 
-
-headers = {'User-Agent': user_agent}
-requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
+# استدعاء الدالة (يمكنك إلغاء تعليق هذا السطر إذا كنت ترغب في تشغيله)
+# send_request()
