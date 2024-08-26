@@ -1,7 +1,11 @@
 import random
 import requests
 
-def generate_user_agent():
+def m2():
+    """
+    تُنشئ user-agent عشوائيًا لـ Facebook.
+    """
+
     # عناصر user-agent الأساسية
     fb_base = "[FBAN/FB4A;FBAV/"
     fb_version = str(random.randint(49,66)) + ".0.0." + str(random.randrange(20,49)) + str(random.randint(11,99))
@@ -15,7 +19,7 @@ def generate_user_agent():
     return random.choice(user_agents)
 
 # استخدام الدالة 
-user_agent = generate_user_agent()
+user_agent = m2()
 
 # استخدم user_agent في طلبات API 
 token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
@@ -23,4 +27,4 @@ ID = '5210419138'
 message = "خش واحد لي اداة" 
 
 headers = {'User-Agent': user_agent}
-requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
+requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers) 
