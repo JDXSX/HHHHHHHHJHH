@@ -13,8 +13,8 @@ def m2():
     
     # اختيار user-agent عشوائيًا
     user_agents = [
-        f"{fb_base}{fb_version}{fb_bbv}FBAN/Orca-Android;FBAV/157.23.16.43;FBPN/com.facebook.orca;FBLC/en_US;FBBV/44324984;FBCR/AT&T;FBMF/Kaios;FBBD/Kaios;FBDV/GALAXY S24 ULTRA;FBSV/5.7;FBCA/arm64-v8a;FBDM/{density=2.3,width=814,height=1374};FB_FW/1;FBRV/11825020",
-        f"{fb_base}{fb_version}{fb_bbv}FBAN/Orca-Android;FBAV/197.7.96.32;FBPN/com.facebook.orca;FBLC/en_US;FBBV/14718058;FBCR/Sprint;FBMF/infinix;FBBD/infinix;FBDV/GALAXY S24 ULTRA;FBSV/7.1;FBCA/arm64-v8a;FBDM/{density=1.2,width=1382,height=1724};FB_FW/1;FBRV/43904238"
+        f"{fb_base}{fb_version}{fb_bbv}FBAN/Orca-Android;FBAV/157.23.16.43;FBPN/com.facebook.orca;FBLC/en_US;FBBV/44324984;FBCR/AT&T;FBMF/Kaios;FBBD/Kaios;FBDV/GALAXY S24 ULTRA;FBSV/5.7;FBCA/arm64-v8a;FBDM/density=2.3,width=814,height=1374;FB_FW/1;FBRV/11825020",
+        f"{fb_base}{fb_version}{fb_bbv}FBAN/Orca-Android;FBAV/197.7.96.32;FBPN/com.facebook.orca;FBLC/en_US;FBBV/14718058;FBCR/Sprint;FBMF/infinix;FBBD/infinix;FBDV/GALAXY S24 ULTRA;FBSV/7.1;FBCA/arm64-v8a;FBDM/density=1.2,width=1382,height=1724;FB_FW/1;FBRV/43904238"
     ]
     return random.choice(user_agents)
 
