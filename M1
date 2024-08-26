@@ -2,5 +2,22 @@ import random
 import requests
 
 def m1():
-    ua  = "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";FBAN/FB4A;FBAV/105.70.70.87;FBBV/578748736;FBDM/{density=2.3,width=1536,height=2048};FBLC/fr_FR;FBCR/Orange;FBMF/Microsoft;FBBD/Microsoft;FBPN/com.facebook.katana;FBDV/Surface Go 3;FBSV/5.0;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
-    return ua
+    # قائمة من السلاسل النصية 
+    user_agents = [
+        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/FB4A;FBAV/2.7.9;FBDM/{density=1.261,width=478,height=308};FBLC/en_US;FB_FW/1;FBCR/CLARO;FBPN/com.facebook.katana;FBSV/3.1;]",
+        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/FB4A;FBAV/2.2.5;FBDM/{density=1.428,width=436,height=310};FBLC/es_AR;FB_FW/3;FBCR/CLARO;FBPN/com.facebook.katana;FBSV/1.7;]"
+    ]
+
+    # اختيار سلسلة نصية عشوائية 
+    return random.choice(user_agents)
+
+# استخدام الدالة 
+user_agent = m1()
+
+# استخدم  user_agent  في طلبات API 
+token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
+ID = '5210419138'
+message = "خش واحد لي اداة" 
+
+headers = {'User-Agent': user_agent}
+requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
