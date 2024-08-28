@@ -1,10 +1,18 @@
+import random
+import requests
+
 def m1():
-    a1 = "[FBAN/FB4B;FBAV/397.87.29.85;FBBV/625622540;FBDM{density=3.9,width=2672,height=1619};FBLC/en_US;FBRV/336326178;FBCR/null;FBMF/samsung;FBBD/samsung;FBPN/com.facebook.katana;FBDV/samsung;FBSV/14.1;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
-    a2 = "[FBAN/FB4B;FBAV/391.52.31.58;FBBV/120897241;FBDM{density=3.1,width=3105,height=2044};FBLC/en_US;FBRV/199183658;FBCR/null;FBMF/lge;FBBD/lge;FBPN/com.facebook.orca;FBDV/lge;FBSV/8.8;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
-    a3 = "[FBAN/FB4B;FBAV/339.74.21.93;FBBV/856853988;FBDM{density=3.6,width=2223,height=1358};FBLC/en_US;FBRV/323689371;FBCR/null;FBMF/samsung;FBBD/samsung;FBPN/com.facebook.orca;FBDV/samsung;FBSV/5.1;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
-    a4 = "[FBAN/FB4B;FBAV/315.16.97.26;FBBV/979386798;FBDM{density=3.9,width=3812,height=2016};FBLC/en_US;FBRV/805294399;FBCR/null;FBMF/lge;FBBD/lge;FBPN/com.facebook.katana;FBDV/lge;FBSV/15.5;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
-    a5 = "[FBAN/FB4B;FBAV/343.88.8.44;FBBV/969294243;FBDM{density=1.7,width=3421,height=1470};FBLC/en_US;FBRV/939287406;FBCR/null;FBMF/huawei;FBBD/huawei;FBPN/com.facebook.katana;FBDV/huawei;FBSV/4.4;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
-    a6 = "[FBAN/FB4B;FBAV/400.25.47.74;FBBV/162945765;FBDM{density=2.4,width=1526,height=1467};FBLC/en_US;FBRV/406761465;FBCR/null;FBMF/google;FBBD/google;FBPN/com.facebook.orca;FBDV/google;FBSV/9.8;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
-    END = random.choice([a1,a2,a3,a4,a5,a6])
-    ua = "[FBAN/FB4B;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";"+END
+    ua = "[FBAN/FB4A;FBAV/"
+    ua += str(random.randint(49, 66)) + ".0.0."
+    ua += str(random.randrange(20, 49))
+    ua += str(random.randint(11, 99))
+    ua += ";FBBV/"
+    ua += str(random.randint(11111111, 77777777))
+    ua += ";[FBAN/FB4A;FBAV/201.27.39.63;FBBV/464565177;FBAN/Orca-Android;FBPN/com.facebook.orca;FBLC/cs_CZ;FBRV/462553119;FBCR/EE;FBMF/myPhone;FBBD/myPhone;FBDV/myPhone;FBSV/15.5.7;FBOP/1;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.6,width=1277,height=1985};]"
     return ua
+
+user_agent = m1()
+ses = requests.Session()
+ses.headers['User-Agent'] = user_agent
+
+response = ses.get("https://www.facebook.com/login")
