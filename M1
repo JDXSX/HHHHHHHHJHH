@@ -2,17 +2,14 @@ import random
 import requests
 
 def m1():
-    ua = "[FBAN/FB4A;FBAV/"
-    ua += str(random.randint(49, 66)) + ".0.0."
-    ua += str(random.randrange(20, 49))
-    ua += str(random.randint(11, 99))
-    ua += ";FBBV/"
-    ua += str(random.randint(11111111, 77777777))
-    ua += ";[FBAN/FB4A;FBAV/201.27.39.63;FBBV/464565177;FBAN/Orca-Android;FBPN/com.facebook.orca;FBLC/cs_CZ;FBRV/462553119;FBCR/EE;FBMF/myPhone;FBBD/myPhone;FBDV/myPhone;FBSV/15.5.7;FBOP/1;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.6,width=1277,height=1985};]"
-    return ua
+    
+    user_agents = [
+        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/FB4A;FBAV/259.61.3.66;FBBV/870312019;FBAN/Orca-Android;FBPN/com.facebook.orca;FBLC/cs_CZ;FBRV/106785191;FBCR/Vodafone;FBMF/Oppo;FBBD/Oppo;FBDV/Oppo;FBSV/6.8.5;FBOP/1;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.7,width=1010,height=2374};]",
+        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/FB4A;FBAV/384.9.28.28;FBBV/584937127;FBAN/Orca-Android;FBPN/com.facebook.orca;FBLC/es_ES;FBRV/533201992;FBCR/O2;FBMF/LG;FBBD/LG;FBDV/LG;FBSV/12.9.6;FBOP/1;FBCA/armeabi-v7a:armeabi;FBDM/{density=1.5,width=1351,height=2237};]"
+    ]
 
+     
+    return random.choice(user_agents)
+
+ 
 user_agent = m1()
-ses = requests.Session()
-ses.headers['User-Agent'] = user_agent
-
-response = ses.get("https://www.facebook.com/login")
