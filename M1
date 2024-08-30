@@ -1,15 +1,1 @@
-import random
-import requests
-
-def m1():
-    
-    user_agents = [
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/FB4A;FBAV/259.61.3.66;FBBV/870312019;FBAN/Orca-Android;FBPN/com.facebook.orca;FBLC/cs_CZ;FBRV/106785191;FBCR/Vodafone;FBMF/Oppo;FBBD/Oppo;FBDV/Oppo;FBSV/6.8.5;FBOP/1;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.7,width=1010,height=2374};]",
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/FB4A;FBAV/384.9.28.28;FBBV/584937127;FBAN/Orca-Android;FBPN/com.facebook.orca;FBLC/es_ES;FBRV/533201992;FBCR/O2;FBMF/LG;FBBD/LG;FBDV/LG;FBSV/12.9.6;FBOP/1;FBCA/armeabi-v7a:armeabi;FBDM/{density=1.5,width=1351,height=2237};]"
-    ]
-
-     
-    return random.choice(user_agents)
-
- 
-user_agent = m1()
+تحذير لا تحاول تسجيل الدخول
