@@ -1,1 +1,9 @@
-تحذير لا تحاول تسجيل الدخول
+import requests
+
+response = requests.get('https://api.ipify.org?format=json')
+
+if response.status_code == 200:
+    data = response.json()
+    
+    print(data['ip']) 
+eixet()
