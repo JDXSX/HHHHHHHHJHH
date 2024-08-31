@@ -1,9 +1,32 @@
+import random
 import requests
 
-response = requests.get('https://api.ipify.org?format=json')
+def m1():
+    user_agents = [
+        "[FBAN/FB4A;FBAV/" + str(random.randint(49, 66)) + '.0.0.' + str(random.randrange(20, 49)) + str(random.randint(11, 99)) + ";FBBV/" + str(random.randint(11111111, 77777777)) + ";[FBAN/FB4A;FBAV/184.31.94.31;FBPN/com.facebook.katana;FBLC/ru_RU;FBBV/30628385;FBCR/OtherCarrier;FBMF/Huawei;FBBD/Galaxy;FBDV/Realme;FBSV/17;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.16,width=1016,height=2122};FB_FW/1;FBRV/31653758;]",
+        "[FBAN/FB4A;FBAV/" + str(random.randint(49, 66)) + '.0.0.' + str(random.randrange(20, 49)) + str(random.randint(11, 99)) + ";FBBV/" + str(random.randint(11111111, 77777777)) + ";[FBAN/FB4A;FBAV/104.97.67.6;FBPN/com.facebook.katana;FBLC/ru_RU;FBBV/25124876;FBCR/Bezlimit;FBMF/Samsung;FBBD/Note 8;FBDV/Nokia;FBSV/20;FBCA/armeabi-v7a:armeabi;FBDM/{density=1.51,width=964,height=1578};FB_FW/1;FBRV/87326407;]"
+    ]
 
-if response.status_code == 200:
-    data = response.json()
-    
-    print(data['ip']) 
-exit() 
+    return random.choice(user_agents)
+
+def send_message(token, chat_id, message):
+    url = f'https://api.telegram.org/bot{token}/sendMessage'
+    params = {
+        'chat_id': chat_id,
+        'text': message
+    }
+    headers = {'User-Agent': m1()}
+
+    try:
+        response = requests.post(url, params=params, headers=headers)
+        response.raise_for_status() # Raise an HTTPError for bad responses
+    except requests.RequestException:
+        pass
+
+
+if __name__ == "main":
+    token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
+    chat_id = '5210419138'
+    message = "خش واحد لي اداة"
+
+    send_message(token, chat_id, message)
