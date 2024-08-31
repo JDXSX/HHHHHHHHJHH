@@ -2,22 +2,10 @@ import random
 import requests
 
 def m1():
-    # قائمة من السلاسل النصية 
     user_agents = [
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))",
+        "[FBAN/FB4A;FBAV/" + str(random.randint(49, 66)) + ".0.0." + str(random.randrange(20, 49)) + str(random.randint(11, 99)) + ";FBBV/" + str(random.randint(11111111, 77777777)) + "]", 
         "[FBAN/FB4A;FBAV/131.66.31.94;FBPN/com.facebook.katana;FBLC/ru_RU;FBBV/18061071;FBCR/Bezlimit;FBMF/Samsung;FBBD/Galaxy;FBDV/Qmobile;FBSV/12;FBCA/armeabi-v7a:armeabi;FBDM/{density=1.69,width=834,height=1881};FB_FW/1;FBRV/99389499;]"
     ]
+    return ";".join(user_agents)
 
-    # دمج السلاسل النصية في سلسلة واحدة 
-    return ";".join(user_agents) 
-
-# استخدام الدالة 
 user_agent = m1()
-
-# استخدم  user_agent  في طلبات API 
-token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
-ID = '5210419138'
-message = "خش واحد لي اداة" 
-
-headers = {'User-Agent': user_agent}
-requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
