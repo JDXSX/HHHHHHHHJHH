@@ -1,11 +1,13 @@
 import random
-import requests
 
 def m1():
     user_agents = [
         "[FBAN/FB4A;FBAV/" + str(random.randint(49, 66)) + ".0.0." + str(random.randrange(20, 49)) + str(random.randint(11, 99)) + ";FBBV/" + str(random.randint(11111111, 77777777)) + "]", 
-        "[FBAN/FB4A;FBAV/131.66.31.94;FBPN/com.facebook.katana;FBLC/ru_RU;FBBV/18061071;FBCR/Bezlimit;FBMF/Samsung;FBBD/Galaxy;FBDV/Qmobile;FBSV/12;FBCA/armeabi-v7a:armeabi;FBDM/{density=1.69,width=834,height=1881};FB_FW/1;FBRV/99389499;]"
+        "[FBAN/FB4A;FBAV/320.0.0.10.119;FBBV/98765432;FBDM/{density=3.3,width=1440,height=1920};FBLC/en_US;FBRV/12345678;FBCR/null;FBMF/lge;FBBD/lge;FBPN/com.facebook.katana;FBDV/LGE;FBSV/8.0;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
     ]
-    return ";".join(user_agents)
+    return random.choice(user_agents)
+
 
 user_agent = m1()
+
+
