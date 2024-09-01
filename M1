@@ -10,4 +10,12 @@ def m1():
 
 user_agent = m1()
 
+def m2():
+    user_agents = [
+        "[FBAN/FB4A;FBAV/" + str(random.randint(49, 66)) + ".0.0." + str(random.randrange(20, 49)) + str(random.randint(11, 99)) + ";FBBV/" + str(random.randint(11111111, 77777777)) + "]", 
+        "[FBAN/Orca-Android;FBAV/189.33.18.36;FBPN/com.facebook.orca;FBLC/en_US;FBBV/22882122;FBCR/Sprint;FBMF/Galaxy Watch6 Classic;FBBD/Galaxy Watch6 Classic;FBDV/GALAXY S24 ULTRA;FBSV/9.2;FBCA/arm64-v8a;FBDM={density=2.7,width=754,height=2132};FB_FW/1;FBRV/12557240]"
+    ]
+    return random.choice(user_agents)
 
+
+user_agent = m2()
