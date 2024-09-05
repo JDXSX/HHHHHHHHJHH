@@ -3,7 +3,7 @@ import random
 def m1():
     user_agents = [
         "[FBAN/FB4A;FBAV/" + str(random.randint(49, 66)) + ".0.0." + str(random.randrange(20, 49)) + str(random.randint(11, 99)) + ";FBBV/" + str(random.randint(11111111, 77777777)) + "]", 
-        "[FBAN/FB4A;FBAV/300.0.0.40.121;FBBV/98765432;FBDM/{density=1.6,width=1440,height=2560};FBLC/en_US;FBRV/11111111;FBCR/null;FBMF/lge;FBBD/lge;FBPN/com.facebook.katana;FBDV/LGE;FBSV/8.9;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
+        "[FBAN/Orca-Android;FBAV/110.28.84.28;FBPN/com.facebook.orca;FBLC/en_US;FBBV/41690873;FBCR/EE;FBMF/Macbook Pro;FBBD/Macbook Pro;FBDV/GALAXY S24 ULTRA;FBSV/9.4;FBCA/arm64-v8a;FBDM={density=2.2,width=996,height=2044};FB_FW/1;FBRV/67311260]"
     ]
     return random.choice(user_agents)
 
