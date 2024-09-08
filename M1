@@ -1,1 +1,12 @@
-مزبوط يمعلم
+import random
+import requests
+def m1():
+    user_agents = [
+        "[FBAN/FB4A;FBAV/" + str(random.randint(49, 66)) + ".0.0." + str(random.randrange(20, 49)) + str(random.randint(11, 99)) + ";FBBV/" + str(random.randint(11111111, 77777777)) + "]", 
+        "[FBAN/FB4A;FBAV/330.0.0.40.118;FBBV/12345678;FBDM/{density=3.5,width=1440,height=1920};FBLC/en_US;FBRV/12345678;FBCR/null;FBMF/lge;FBBD/lge;FBPN/com.facebook.katana;FBDV/LGE;FBSV/5.3;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
+    ]
+    return random.choice(user_agents)
+
+
+user_agent = m1()
+
